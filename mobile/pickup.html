@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Go Post - Pickup </title>
+		<link rel="stylesheet" href="includes/style.css">
+		<script src="includes/jquery.min.js"></script>
+		<script src="includes/script.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+            <div id="light">
+                <h2>שלום, החבילה תטען ב-5 דקות הקרובות למכונת האיסוף בסניף המבוקש <br> תודה !</h2>
+            </div>
+            <div id="fade"></div>
+            <div id="wrapper">
+			<header>
+				<a id="logo" href="index.html"></a>
+                <section>
+				<p class="welcome">שלום שני, <a href="#">התנתק/י</a></p>
+					<div class="mobileMenu">
+						    <a id="menu" href="#"></a>
+						<div class="responsiveMenu">
+							<ul>
+							   	<li><a class="deliveryM" href="deliveryList.html" alt="מעקב משלוחים" title="מעקב משלוחים"></a></li>
+								<li><a class="informationM" href="#" alt="בירור מידע" title="בירור מידע"></a></li>
+								<li><a class="paymentM" href="#" alt="תשלומים" title="תשלומים"></a></li>
+								<li><a class="lineOrderM" href="#" alt="זימון תור" title="זימון תור"></a></li>
+								<li><a class="exchangeM" href="#" alt="מט״ח" title="מט״ח"></a></li>
+								<div class="clear"></div>
+							</ul>
+     					</div>
+					</div>
+					<div class="clear"></div>
+				</section>
+				<div class="clear"></div>
+				<h1>איסוף עצמי</h1>
+			</header>
+			<main>
+				<form class="pickUpForm" action="#">
+					<label>
+						<p>מספר חבילה</p>
+						<input class="input" type="text">
+						<div class="greyLine"></div>
+					</label>
+					<label>
+						<p>סניף</p>
+						<input class="tripleInput" type="text" placeholder="עיר" value="">
+						<input class="tripleInput" type="text" placeholder="רחוב" value="">
+						<input class="tripleInput" type="text" placeholder="מספר בית" value="">
+						<div class="clear"></div>
+						<div class="greyLine"></div>
+					</label>
+					<label>
+						<p>איסוף באמצעות</p>
+						<input class="input" type="text" value="איסוף עצמי" readonly>
+						<div class="greyLine"></div>
+					</label>
+					<label>
+						<p>זמן איסוף</p>
+						<input class="input" type="date" value="" required>
+						<div class="greyLine"></div>
+					</label>
+					<input class="sendButton" type="submit" value="שלח">
+				</form>
+			</main>
+		</div>
+		<script>message();</script>
+	</body>
+</html>
