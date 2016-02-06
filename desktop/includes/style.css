@@ -34,7 +34,11 @@ header {
     width: 54%;
     float: right;
 	height: 100%;
+<<<<<<< HEAD
     margin-right: 16%;
+=======
+    margin-right: 19%;
+>>>>>>> origin/master
 /*    margin-top: 1.5%;*/
 }
 
@@ -71,10 +75,17 @@ header {
 
 .date {
     width: 20%;
+<<<<<<< HEAD
     height: 18%;
     background-color: #ffffff;
     position: absolute;
 	padding-top: 0.2%;
+=======
+    height: 19%;
+    background-color: #ffffff;
+    position: absolute;
+	padding-top: 0.4%;
+>>>>>>> origin/master
     top: 87%;
     left: 7.5%;
     border-radius: 8px;
@@ -83,6 +94,7 @@ header {
     color: #ca151d;
     font-weight: bold;
 }
+<<<<<<< HEAD
 .breadcrumb {
     width: 30%;
     height: 13%;
@@ -97,6 +109,8 @@ header {
 .breadcrumb > li.active {
     color: #ffffff;
 }
+=======
+>>>>>>> origin/master
 
 .clear {
     clear: both;
@@ -104,12 +118,25 @@ header {
 
 h1 {
     color: #ffffff;
+<<<<<<< HEAD
+=======
+	text-decoration: underline;
+/*
+    position: absolute;
+    top: 50%;
+    left: 58%;
+*/
+>>>>>>> origin/master
 	float: right;
 	margin-right: 20%;
 	margin-top: 5%;
     font-size: 3.0em;
 }
 
+<<<<<<< HEAD
+=======
+/*
+>>>>>>> origin/master
 .line {
     width: 19%;
     background-color: #d6d6d6;
@@ -118,17 +145,28 @@ h1 {
     top: 80%;
     left: 60%;
 }
+<<<<<<< HEAD
 
 nav {
     height: 870px;
     background-color: #ca151d;
 	color: #ffffff;
     width: 16%;
+=======
+*/
+
+nav {
+    height: 1200px;
+    background-color: #ca151d;
+	color: #ffffff;
+    width: 15%;
+>>>>>>> origin/master
 	float: right;
     position: absolute;
 	right: 0px;
 }
 
+<<<<<<< HEAD
 nav > p.login {
 	margin-top: 15%;
 	padding: 0px 4px 10px 4px;
@@ -140,6 +178,14 @@ nav > p.name {
     text-align: center;
 }
 
+=======
+nav > p {
+	margin-top: 15%;
+	padding: 0px 4px 0px 4px;
+	text-align: center;
+}
+
+>>>>>>> origin/master
 nav > p > a {
 	color: #ffffff;
 	text-decoration: underline;
@@ -148,13 +194,22 @@ nav > p > a {
 .profilePic {
 	height: 170px;
 	width: 100%;
+<<<<<<< HEAD
 	background-image: url(../images/user.png);
+=======
+	border-radius: 50%;;
+	background:#123
+>>>>>>> origin/master
 }
 
 .sideNav {
 	width: 100%;
 	position: relative;
+<<<<<<< HEAD
 	top: 2%;
+=======
+	top: 20%;
+>>>>>>> origin/master
 }
 
 .sideNav > li {
@@ -177,6 +232,17 @@ nav > p > a {
     width: 100%;
     color: #ffffff;
 }
+<<<<<<< HEAD
+=======
+
+.sideNav > li > a:hover {
+    border-color: #d6d6d6;
+/*	text-decoration: underline;*/
+/*	text-decoration-color: #d6d6d6;*/
+    color: #ffffff;
+    border-radius: 3px;
+}
+>>>>>>> origin/master
 
 .sideNav > li > a:hover {
     border-color: #d6d6d6;
