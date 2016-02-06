@@ -14,37 +14,71 @@
 	<link rel="stylesheet" href="includes/style.css">
 </head>
     <body>
-    <div id = "wrapper">
-       <header>
-         <h1>Dashboard</h1>
-         <div class="line"></div>
-          <section class="logoNav">
-               <ul>
-                   <li>חבילות <b>56</b></li>
-                   <li>רחפן <b>56</b></li>
-                   <li>איסוף עצמי <b>56</b></li>
-                   <li>דואר שליחים <b>56</b></li>
-                   <div class="clear"></div>
-               </ul>
-                  <section class="logoSite">
-                       <a href="index.html" class="logo"></a>
-                   </section>
-                   <section class="date">
-                       <p> 22.01.16 </p>
-                   </section>
-           </section>
-       </header>
-       <nav>
-          <ul>
-              <li><a href="#"><b>הפרופיל שלי</b></a></li>
-              <li><a href="#">Dashboard</a></li>
-              <li><a href="#">איסוף עצמי</a></li>
-              <li><a href="#">רחפן</a></li>
-         </ul>
-       </nav>
-       <main>
+		<div id = "wrapper">
+			<header>
+<!--				<div class="line"></div>-->
+				<section class="dataNav">
+					<ul class="dataUl">
+						<li>חבילות <b>56</b></li>
+						<li>איסוף עצמי <b>56</b></li>
+						<li>רחפן <b>56</b></li>
+						<li>דואר שליחים <b>56</b></li>
+						<div class="clear"></div>
+					</ul>
+				</section>
+				<section class="logoSite">
+					<a href="index.html" class="logo"></a>
+				</section>
+				<section class="date">
+					<p> 22.01.16 </p>
+				</section>
+				<h1>Dashboard</h1>
+				<ol class="breadcrumb">
+                  <li class="active">Dashboard</li>
+                  <li><a href="#">איסוף עצמי</a></li>
+                </ol>
+				<div class="line"></div>
+		   </header>
+		   <nav>
+   				<p class="login">שלום יעקב, <a href="#">התנתק/י</a></p>
+	   			<section class="profilePic"></section>
+	   			<p class="name">יעקב חיים<br> <b>מנהל הסניף</b></p>
+		   		<ul class="sideNav">
+		   			<li><a href="#"><b>הפרופיל שלי</b></a></li>
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">איסוף עצמי</a></li>
+					<li><a href="#">רחפן</a></li>
+		   		</ul>
+		   </nav>
+		   <main>
+            <section class="drone">
+                <h2>רחפן</h2>
+                <img src="images/drone.png" alt="רחפן" title="רחפן">
+                <p>הזמנות בתור</p>
 
-       </main>
-    </div>
+            </section>
+            <section class="Courier">
+                <h2>דואר שליחים</h2>
+                <img src="images/Courier.png" alt="דואר שליחים" title="דואר שליחים">
+                <p></p>
+            </section>
+            <section class="package">
+                <h2> חבילות </h2>
+                <img src="images/package.png" alt="חבילות" title="חבילות">
+                <p></p>
+            </section>
+            <section class="pickup">
+                <h2> איסוף <br>עצמי </h2>
+                <img src="images/pickup.png" alt="איסוף עצמי" title="איסוף עצמי">
+                <p></p>
+            </section>
+            <section class="report">
+                <h2> דוחות </h2>
+                <img src="images/report.png" alt="דוחות" title="דוחות">
+                <img src="images/monReport.png" class="monReport" alt="דוח חודשי" title="דוח חודשי">
+                <img src="images/dayReport.png" class="dayReport" alt="דוח יומי" title="דוח יומי">
+            </section>
+		   </main>
+		</div>
     </body>
 </html>
