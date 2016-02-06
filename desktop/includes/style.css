@@ -2,33 +2,45 @@
     margin: 0 auto;
     padding: 0px;
 }
+
 #wrapper {
     width: 1000px;
+	margin-top: 5px;
+	position: relative;
+
 }
-header,main,section,nav {
+
+header, main, section, nav {
     display: block;
 }
+
 header {
     width: 100%;
     height: 220px;
     background-color: #ca151d;
     position: relative;
+	float: left;
 }
-.logoNav {
+
+.dataNav {
     width: 100%;
     background-color: #ffffff;
     height: 70px;
-    float: left;
+/*    float: left;*/
 }
-ul {
+
+.dataUl {
     list-style-type: none;
     width: 51%;
     float: right;
+	height: 100%;
     margin-right: 19%;
-    margin-top: 1.5%;
+/*    margin-top: 1.5%;*/
 }
-ul > li {
+
+.dataUl > li {
     float: right;
+	height: 75%;
     width: 25%;
     margin-top: 4%;
     color: #ca151d;
@@ -36,15 +48,18 @@ ul > li {
     text-align: center;
     font-size: 1.4em;
 }
-ul > li > b {
+
+.dataUl > li > b {
     color: #909090;
 }
+
 .logo {
-    background-image: url(../images/logo.jpg);
+    background: url(../images/logo.jpg);
     width: 40%;
     height: 130px;
     display: block;
 }
+
 .logoSite {
     width: 25%;
     background-color: #ffffff;
@@ -53,11 +68,13 @@ ul > li > b {
     top: 0px;
     left: 5%;
 }
+
 .date {
     width: 20%;
-    height: 36px;
+    height: 19%;
     background-color: #ffffff;
     position: absolute;
+	padding-top: 0.4%;
     top: 87%;
     left: 7.5%;
     border-radius: 8px;
@@ -66,16 +83,26 @@ ul > li > b {
     color: #ca151d;
     font-weight: bold;
 }
+
 .clear {
     clear: both;
 }
+
 h1 {
     color: #ffffff;
+	text-decoration: underline;
+/*
     position: absolute;
     top: 50%;
     left: 58%;
+*/
+	float: right;
+	margin-right: 20%;
+	margin-top: 5%;
     font-size: 3.0em;
 }
+
+/*
 .line {
     width: 19%;
     background-color: #d6d6d6;
@@ -84,31 +111,67 @@ h1 {
     top: 85%;
     left: 59.5%;
 }
+*/
+
 nav {
-    height: 100%;
+    height: 1200px;
     background-color: #ca151d;
+	color: #ffffff;
     width: 15%;
+	float: right;
     position: absolute;
-    top: 0px;
-    right: 140px;
+	right: 0px;
 }
-nav > ul > li {
+
+nav > p {
+	margin-top: 15%;
+	padding: 0px 4px 0px 4px;
+	text-align: center;
+}
+
+nav > p > a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.profilePic {
+	height: 170px;
+	width: 100%;
+	border-radius: 50%;;
+	background:#123
+}
+
+.sideNav {
+	width: 100%;
+	position: relative;
+	top: 20%;
+}
+
+.sideNav > li {
     list-style-type: none;
     margin-top: 10px;
     padding: 0;
-    width: 120%;
-    position: relative;
-    top: 300px;
-    padding: 8px 0px 8px 0px;
+    width: 100%;
+/*    position: relative;*/
+/*    top: 300px;*/
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-align: center;
+/*    padding: 8px 0px 8px 0px;*/
 }
-nav > ul > li a {
+
+.sideNav > li > a {
     display: block;
+	border-bottom: 2px solid #ca151d;
+	text-decoration: none;
     width: 100%;
     color: #ffffff;
 }
-nav > ul > li a:hover {
-    border-bottom: 2px solid #d6d6d6;
-    text-decoration: none;
+
+.sideNav > li > a:hover {
+    border-color: #d6d6d6;
+/*	text-decoration: underline;*/
+/*	text-decoration-color: #d6d6d6;*/
     color: #ffffff;
     border-radius: 3px;
 }
