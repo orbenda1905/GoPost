@@ -31,10 +31,10 @@ header {
 
 .dataUl {
     list-style-type: none;
-    width: 51%;
+    width: 54%;
     float: right;
 	height: 100%;
-    margin-right: 19%;
+    margin-right: 16%;
 /*    margin-top: 1.5%;*/
 }
 
@@ -42,7 +42,7 @@ header {
     float: right;
 	height: 75%;
     width: 25%;
-    margin-top: 4%;
+    margin-top: 3%;
     color: #ca151d;
     direction: rtl;
     text-align: center;
@@ -71,10 +71,10 @@ header {
 
 .date {
     width: 20%;
-    height: 19%;
+    height: 18%;
     background-color: #ffffff;
     position: absolute;
-	padding-top: 0.4%;
+	padding-top: 0.2%;
     top: 87%;
     left: 7.5%;
     border-radius: 8px;
@@ -83,6 +83,20 @@ header {
     color: #ca151d;
     font-weight: bold;
 }
+.breadcrumb {
+    width: 30%;
+    height: 13%;
+    margin-top: 12%;
+    margin-right: 19%;
+    direction: rtl;
+    background-color: #ca151d;
+}
+.breadcrumb > li a {
+    color: #ffffff;
+}
+.breadcrumb > li.active {
+    color: #ffffff;
+}
 
 .clear {
     clear: both;
@@ -90,43 +104,40 @@ header {
 
 h1 {
     color: #ffffff;
-	text-decoration: underline;
-/*
-    position: absolute;
-    top: 50%;
-    left: 58%;
-*/
 	float: right;
 	margin-right: 20%;
 	margin-top: 5%;
     font-size: 3.0em;
 }
 
-/*
 .line {
     width: 19%;
     background-color: #d6d6d6;
     height: 1px;
     position: absolute;
-    top: 85%;
-    left: 59.5%;
+    top: 80%;
+    left: 60%;
 }
-*/
 
 nav {
-    height: 1200px;
+    height: 870px;
     background-color: #ca151d;
 	color: #ffffff;
-    width: 15%;
+    width: 16%;
 	float: right;
     position: absolute;
 	right: 0px;
 }
 
-nav > p {
+nav > p.login {
 	margin-top: 15%;
-	padding: 0px 4px 0px 4px;
+	padding: 0px 4px 10px 4px;
 	text-align: center;
+}
+
+nav > p.name {
+    padding: 0px 4px 0px 4px;
+    text-align: center;
 }
 
 nav > p > a {
@@ -137,14 +148,13 @@ nav > p > a {
 .profilePic {
 	height: 170px;
 	width: 100%;
-	border-radius: 50%;;
-	background:#123
+	background-image: url(../images/user.png);
 }
 
 .sideNav {
 	width: 100%;
 	position: relative;
-	top: 20%;
+	top: 2%;
 }
 
 .sideNav > li {
@@ -170,20 +180,81 @@ nav > p > a {
 
 .sideNav > li > a:hover {
     border-color: #d6d6d6;
-/*	text-decoration: underline;*/
-/*	text-decoration-color: #d6d6d6;*/
-    color: #ffffff;
+
     border-radius: 3px;
 }
 
+.drone {
+    width: 35%;
+    height: 220px;
+    background-color: #c11520;
+    position: absolute;
+    top: 230px;
+    right: 170px;
+    box-shadow: 5px 5px 5px #888888;
+}
+.Courier {
+    width: 47%;
+    height: 220px;
+    background-color: #7e090d;
+    position: absolute;
+    top: 230px;
+    left: 0px;
+    box-shadow: 5px 5px 5px #888888;
+}
+.package {
+    width: 47%;
+    height: 180px;
+    background-color: #e61624;
+    position: absolute;
+    top: 460px;
+    left: 0px;
+    box-shadow: 5px 5px 5px #888888;
+}
+.pickup {
+    width: 35%;
+    height: 400px;
+    background-color: #841c0f;
+    position: absolute;
+    top: 460px;
+    right: 170px;
+    box-shadow: 5px 5px 5px #888888;
+}
+.report {
+    width: 47%;
+    height: 209px;
+    background-color: #a02c0f;
+    position: absolute;
+    top: 650px;
+    left: 0px;
+    box-shadow: 5px 5px 5px #888888;
+}
+h2 {
+    color: #ffffff;
+    float: right;
+    padding-right: 5%;
+    font-size: 2.5em;
+    direction: rtl;
+}
+img {
+    padding-left: 5%;
+    padding-top: 2%;
+    float: left;
+}
+.monReport {
+    width: 30%;
+    margin-top: 4%;
+    margin-right: 45%;
+}
+.dayReport {
+    width: 25%;
+    padding-right: 2%;
+    margin-top: 2%;
 
-
-
-
-
-
-
-
-
-
-
+}
+.drone > p {
+    color: #ffffff;
+    margin-top: 30%;
+    direction: rtl;
+    margin-right: 5%;
+}
