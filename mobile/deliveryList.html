@@ -8,15 +8,9 @@
 		<script src="includes/script.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script>
-                window.onload = function() {
-                var box = document.getElementsByClassName("deliveryBox");
-                    box[box.length - 1].style.display = "none";
-                    document.getElementsByClassName("addButton")
-                    [0].addEventListener("click", function () {
-                        var box = document.getElementsByClassName("deliveryBox");
-                        box[box.length - 1].style.display = "block";
-                    });
-                };
+			$(document).ready(function() {
+				deliveryList();
+			});
         </script>
 	</head>
 	<body>
@@ -64,7 +58,7 @@
 				<h1>רשימת משלוחים</h1>
 			</header>
 			<main>
-				<form id="deliveryAdding" action="#">
+				<form id="deliveryAdding" action="" method="post">
 					<label>
 						<input class="packageId" required name="packageId" type="text" placeholder="מספר משלוח למעקב" pattern="(?=.*\d)(?=.*[A-Z]).{13,}" title="Must contain at least two uppercase letter, 10 digits and in the end two uppercase letter,exactly 13 characters">
 						<input class="scan" type="submit" value="סרוק">
@@ -72,49 +66,7 @@
 					<input class="addButton" type="submit" value=" +  הוסף">
 					<div class="clear"></div>
 				</form>
-					<section class="deliveryBox">
-						<div class="rec">
-							<p>1</p>
-						</div>
-						<section class="info">
-							<p><b>שולח: </b>קופיקס, ת״א</p>
-							<p><b>סטטוס: </b>מוכן לאיסוף</p>
-						</section>
-						<div class="status">
-							<a href="pickupOptions.html" class="readySts"></a>
-						</div>
-						<div class="clear"></div>
-					</section>
-					<section class="deliveryBox">
-						<div class="rec">
-							<p>2</p>
-						</div>
-						<section class="info">
-							<p><b>שולח: </b>אופטיקנה, ת״א</p>
-							<p><b>סטטוס: </b>טרם הגיע</p>
-						</section>
-						<div class="status">
-							<a href="#" class="infoSts"></a>
-						</div>
-						<div class="clear"></div>
-					</section>
-					<section class="deliveryBox">
-						<div class="rec">
-							<p>3</p>
-						</div>
-						<section class="info">
-							<p><b>שולח: </b>קופיקס, ת״א</p>
-							<p><b>סטטוס: </b>טרם הגיע</p>
-						</section>
-						<div class="status">
-							<a href="#" class="infoSts"></a>
-						</div>
-						<div class="clear"></div>
-					</section>
 			</main>
 		</div>
-		<script>
-            info();
-        </script>
 	</body>
 </html>
