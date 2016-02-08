@@ -9,11 +9,9 @@
 	position: relative;
 
 }
-
 header, main, section, nav {
     display: block;
 }
-
 header {
     width: 100%;
     height: 220px;
@@ -21,7 +19,6 @@ header {
     position: relative;
 	float: left;
 }
-
 .dataNav {
     width: 100%;
     background-color: #ffffff;
@@ -120,7 +117,7 @@ h1 {
 }
 
 nav {
-    height: 870px;
+    height: 910px;
     background-color: #ca151d;
 	color: #ffffff;
     width: 16%;
@@ -180,54 +177,57 @@ nav > p > a {
 
 .sideNav > li > a:hover {
     border-color: #d6d6d6;
-
     border-radius: 3px;
 }
 
 .drone {
     width: 35%;
-    height: 220px;
+    height: 260px;
     background-color: #c11520;
-    position: absolute;
-    top: 230px;
-    right: 170px;
+    float: left;
+    position: relative;
     box-shadow: 5px 5px 5px #888888;
+    margin-top: 1%;
+    margin-left: 1%;
 }
-.Courier {
+.courier {
     width: 47%;
-    height: 220px;
+    height: 260px;
     background-color: #7e090d;
-    position: absolute;
-    top: 230px;
-    left: 0px;
+    position: relative;
+    float: left;
     box-shadow: 5px 5px 5px #888888;
+    margin-top: 1%;
 }
 .package {
-    width: 47%;
+    width: 100%;
     height: 180px;
     background-color: #e61624;
-    position: absolute;
-    top: 460px;
-    left: 0px;
+    position: relative;
     box-shadow: 5px 5px 5px #888888;
 }
 .pickup {
     width: 35%;
     height: 400px;
     background-color: #841c0f;
-    position: absolute;
-    top: 460px;
-    right: 170px;
+    position: relative;
+    float: left;
     box-shadow: 5px 5px 5px #888888;
+    margin-left: 1%;
+    margin-top: 1%;
 }
 .report {
-    width: 47%;
+    width: 100%;
     height: 209px;
     background-color: #a02c0f;
-    position: absolute;
-    top: 650px;
-    left: 0px;
+    position: relative;
     box-shadow: 5px 5px 5px #888888;
+    margin-top: 2.1%;
+}
+.miniWrapper {
+    float: left;
+    width: 47%;
+    margin-top: 1%;
 }
 h2 {
     color: #ffffff;
@@ -250,11 +250,92 @@ img {
     width: 25%;
     padding-right: 2%;
     margin-top: 2%;
-
 }
-.drone > p {
+.bold {
+    font-size: 2.0em;
+    font-weight: bold;
+}
+/*=============drone============*/
+main > section > p {
     color: #ffffff;
-    margin-top: 30%;
-    direction: rtl;
-    margin-right: 5%;
+    text-align: center;
 }
+.drone > p.top {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    padding-right: 5%;
+}
+.drone > p.right {
+    margin-top: 10%;
+    float: right;
+    padding-right: 4.5%;
+}
+.drone > p.left {
+    float: left;
+    margin-top: 10%;
+    padding-left: 30%;
+}
+/*==============================*/
+
+/*=============courier============*/
+.courier > p.top {
+    position: absolute;
+    top: 25%;
+    right: 1%;
+    padding-right: 5%;
+}
+.courier > p.right {
+    margin-top: 1.5%;
+    float: right;
+    padding-right: 4.5%;
+}
+.courier > p.left {
+    float: left;
+    position: absolute;
+    top: 74%;
+    right: 7%;
+}
+.courier > p.leftB {
+    float: left;
+    margin-top: 15%;
+    padding-left: 40%;
+}
+/*==============================*/
+
+/*=============pickup============*/
+.pickup > p.top {
+    position: absolute;
+    top: 35%;
+    right: 4%;
+}
+.pickup > p.right {
+    margin-top: 30%;
+    float: right;
+    padding-right: 5%;
+}
+.pickup > p.left {
+    float: left;
+    position: absolute;
+    top: 72%;
+    right: 5%;
+}
+/*==============================*/
+
+/*=============package============*/
+main > .miniWrapper > section > p {
+    color: #ffffff;
+    text-align: center;
+}
+.package > p.top {
+    position: absolute;
+    top: 55%;
+    right: 0px;
+    padding-right: 5%;
+}
+.package > p.right {
+    position: absolute;
+    top: 55%;
+    left: 45%;
+}
+/*==============================*/
