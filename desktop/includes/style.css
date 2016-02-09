@@ -88,6 +88,7 @@ header {
 }
 .breadcrumb > li a {
     color: #ffffff;
+    font-weight: bold;
 }
 .breadcrumb > li.active {
     color: #ffffff;
@@ -354,7 +355,7 @@ main > .miniWrapper > section > p {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    width: 58%;
+    width: 60%;
     float: right;
     margin-right: 1%;
     margin-top: 3%;
@@ -420,7 +421,6 @@ input[type=text]:focus {
     border: none;
     margin-top: 1%;
 }
-
 .packageDel {
     width: 95%;
     height: 100px;
@@ -494,8 +494,87 @@ input[type='submit']:focus {
     position: relative;
     width: 30%;
     float: right;
-    margin-right: 1%;
+    margin-right: 2%;
     margin-top: 5%;
 }
+h3 {
+    width: 27%;
+    color: #ffffff;
+    float: left;
+    margin-left: 5.7%;
+    font-size: 2.8em;
+    margin-top: 4.5%;
+}
+.lineD {
+    width: 22.5%;
+    background-color: #d6d6d6;
+    height: 1px;
+    position: absolute;
+    top: 12%;
+    left: 7.5%;
+}
+.title {
+    width: 11%;
+}
+.titleLine {
+    width: 8%;
+    background-color: #d6d6d6;
+    height: 1px;
+    position: absolute;
+    top: 82%;
+    left: 69%;
+}
+.flyDrone {
+    background: url(../images/drone.png);
+    width: 35%;
+    height: 110px;
+    position: relative;
+    left: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    float: left;
+}
+.flyDrone > .circle {
+    width: 28%;
+    position: absolute;
+    top: 37.5%;
+    right: 37.5%;
+}
+.droneSide{
+    width: 40%;
+    height: 589px;
+    float: left;
+    position: relative;
+    right: 32.7%;
+}
 
+.droneBox {
+    position: relative;
+    width: 30%;
+    bottom: 90%;
+    float: right;
+    margin-right: 2%;
+    margin-top: 5%;
+}
+.droneDel {
+    width: 87%;
+    height: 200px;
+    background: #d7d7d7;
+    margin-right: 3%;
+    margin-top: 5%;
+    border-radius: 7px;
+}
+.packageNum > form {
+    position: relative;
+    bottom: 25%;
+}
+.packageNum > form > .packageLine {
+   width: 100%;
+}
+.packageNum > form > label {
+    font-size: 1.0em;
+}
 
+input[type='text'][name='droneNumber'] {
+
+}
