@@ -368,9 +368,10 @@ li > a {
 #light{
     display: none;
     position: absolute;
+	font-size: 1.2em;
     top: 30%;
-    left: 5%;
-    width: 300px;
+    left: 10%;
+    width: 80%;
     padding: 20px;
     background: #ffffff;
     z-index: 1002;
@@ -411,7 +412,7 @@ li > a {
 	height: 100%;
 	width: 100%;
 	top: 0px;
-	background: rgba( 255, 255, 255, .8 )
+	background:
                 url('http://i.stack.imgur.com/FhHRx.gif')
                 50% 50%
                 no-repeat;
