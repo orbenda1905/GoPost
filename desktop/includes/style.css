@@ -422,10 +422,9 @@ input[type=text]:focus {
 }
 
 .packageDel {
-    width: 27%;
+    width: 95%;
     height: 100px;
     background: #d7d7d7;
-    float: right;
     margin-right: 3%;
     margin-top: 5%;
     border-radius: 7px;
@@ -482,13 +481,21 @@ input[type='submit']:focus {
 	-moz-border-radius: 40px;
 	-webkit-border-radius: 40px;
 	border-radius: 40px;
-    margin-right: 7%;
+    position: absolute;
+    right: 0%;
 }
 .circle > p {
     font-weight: bold;
     color: #ffffff;
     text-align: center;
     margin-top: 13%;
+}
+.box {
+    position: relative;
+    width: 30%;
+    float: right;
+    margin-right: 1%;
+    margin-top: 5%;
 }
 
 
