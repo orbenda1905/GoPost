@@ -23,7 +23,6 @@ header {
     width: 100%;
     background-color: #ffffff;
     height: 70px;
-/*    float: left;*/
 }
 
 .dataUl {
@@ -32,7 +31,6 @@ header {
     float: right;
 	height: 100%;
     margin-right: 16%;
-/*    margin-top: 1.5%;*/
 }
 
 .dataUl > li {
@@ -159,12 +157,9 @@ nav > p > a {
     margin-top: 10px;
     padding: 0;
     width: 100%;
-/*    position: relative;*/
-/*    top: 300px;*/
 	padding-top: 8px;
 	padding-bottom: 8px;
 	text-align: center;
-/*    padding: 8px 0px 8px 0px;*/
 }
 
 .sideNav > li > a {
@@ -339,3 +334,50 @@ main > .miniWrapper > section > p {
     left: 45%;
 }
 /*==============================*/
+
+
+
+/*===============pickup - page================*/
+
+.pickupPackage {
+    width: 83%;
+    height: 675px;
+    float: left;
+    position: relative;
+    margin-top: 1%;
+    box-shadow: 5px 5px 5px #888888;
+    background: url(../images/pickup.png) no-repeat #861c11;
+}
+
+.pickupPackage > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 58%;
+    float: right;
+    margin-right: 3%;
+    margin-top: 3%;
+    border-radius: 3px;
+    height: 67px;
+    background: #ffffff;
+}
+
+.pickupPackage > ul > li {
+    float: right;
+    width: 33%;
+}
+
+.pickupPackage > ul > li a {
+    display: block;
+    color: #c81925;
+    text-align: center;
+    padding: 20px 17px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.pickupPackage > ul > li a.active {
+    background: #e6e6e6;
+}
