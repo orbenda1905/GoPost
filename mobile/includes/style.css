@@ -404,6 +404,22 @@ li > a {
     animation-iteration-count: infinite;
 }
 
+.waitingSign {
+/*	display: none;*/
+	position: fixed;
+	z-index: 1000;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	background: rgba( 255, 255, 255, .8 )
+                url('http://i.stack.imgur.com/FhHRx.gif')
+                50% 50%
+                no-repeat;
+}
+
+
+
+
 @media (min-width: 475px) and (max-width: 590px) {
 	#wrapper {
 		width: 100%;

@@ -86,8 +86,12 @@ function addBox(data) {
 function deliveryList() {
 	$("#deliveryAdding").submit(function(e) {
 		e.preventDefault();
+		$('body').fadeIn(200).append("<div class='waitingSign'></div>");
 		var boxId = $(".packageId").val();
 		$.get("addBox.php", {pId: Shani.getId(), boxId: boxId}, function(data) {
+			$('.waitingSign').fadeOut(200, function() {
+				$('.waitingSign').remove();
+			});
 			var json = $.parseJSON(data);
 			console.log(json);
 			if (json.exist === "no") {
@@ -98,4 +102,9 @@ function deliveryList() {
 			addBox(json);
 		});
 	});
+}
+
+function passBoxId() {
+	var href = $(location).attr("href");
+
 }
