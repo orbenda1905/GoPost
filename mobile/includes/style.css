@@ -47,6 +47,12 @@ header {
 	padding-bottom: 40%;
 	padding-top: 40%;
 	z-index: 99;
+    border-radius: 5px;
+}
+.lineMenu {
+    width: 85%;
+    height: 1px;
+    background: #ca151d;
 }
 
 .responsiveMenu > ul > li {
