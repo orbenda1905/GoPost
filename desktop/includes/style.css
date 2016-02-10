@@ -349,7 +349,6 @@ main > .miniWrapper > section > p {
     box-shadow: 5px 5px 5px #888888;
     background: #861c11;
 }
-
 .pickupPackage > ul {
     list-style-type: none;
     margin: 0;
@@ -363,12 +362,10 @@ main > .miniWrapper > section > p {
     height: 60px;
     background: #ffffff;
 }
-
 .pickupPackage > ul > li {
     float: right;
     width: 33%;
 }
-
 .pickupPackage > ul > li a {
     display: block;
     color: #c81925;
@@ -428,6 +425,7 @@ input[type=text]:focus {
     margin-right: 3%;
     margin-top: 5%;
     border-radius: 7px;
+    box-shadow: 4px 4px 4px #000000;
 }
 .packageNum {
     width: 100%;
@@ -542,7 +540,6 @@ h3 {
 }
 .droneSide{
     width: 39%;
-    height: 589px;
     float: left;
     position: relative;
     right: 32.7%;
@@ -555,6 +552,10 @@ h3 {
     margin-right: 2%;
     margin-top: 5%;
 }
+.packageSide {
+    float: right;
+
+}
 .droneDel {
     width: 85%;
     height: 170px;
@@ -562,6 +563,7 @@ h3 {
     margin-right: 3%;
     margin-top: 5%;
     border-radius: 7px;
+    box-shadow: 4px 4px 4px #000000;
 }
 .packageNum > form {
     position: relative;
@@ -590,3 +592,4 @@ input[type='text'][name='droneNumber'] {
 input[type='text'][name='droneNumber']:focus {
     outline: none;
 }
+
