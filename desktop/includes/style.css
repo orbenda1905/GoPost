@@ -541,13 +541,12 @@ h3 {
     right: 37.5%;
 }
 .droneSide{
-    width: 40%;
+    width: 39%;
     height: 589px;
     float: left;
     position: relative;
     right: 32.7%;
 }
-
 .droneBox {
     position: relative;
     width: 30%;
@@ -557,8 +556,8 @@ h3 {
     margin-top: 5%;
 }
 .droneDel {
-    width: 87%;
-    height: 200px;
+    width: 85%;
+    height: 170px;
     background: #d7d7d7;
     margin-right: 3%;
     margin-top: 5%;
@@ -569,12 +568,25 @@ h3 {
     bottom: 25%;
 }
 .packageNum > form > .packageLine {
-   width: 100%;
+    width: 89%;
+    margin-right: 5%;
 }
 .packageNum > form > label {
     font-size: 1.0em;
+    padding-right: 3%;
 }
 
 input[type='text'][name='droneNumber'] {
-
+    margin-top: 2%;
+    background: #d7d7d7;
+    border: none;
+    width: 50%;
+    margin-left: 11%;
+    color: #ffffff;
+    padding: 8px 0px 0px 10px;
+    text-align: center;
+    font-size: 1.3em;
+}
+input[type='text'][name='droneNumber']:focus {
+    outline: none;
 }
