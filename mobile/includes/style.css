@@ -365,6 +365,19 @@ li > a {
     opacity: 0.70;
     filter: alpha(opacity=70);
 }
+#lightFade {
+	display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    z-index:1001;
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
 #light{
     display: none;
     position: absolute;

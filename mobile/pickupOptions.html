@@ -5,11 +5,17 @@
 		<title> Go Post - PickUpOptions </title>
 		<link rel="stylesheet" href="includes/style.css">
 		<script src="includes/jquery.min.js"></script>
-		<script src="includes/script.js"></script>
+<!--		<script src="includes/script.js"></script>-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script>
 			$(document).ready(function() {
-				passBoxId();
+				var boxId = $(location).attr("href").split("?")[1].split("=")[1];//getting the boxId from the url
+				$(".selfPickup").attr("href", "pickup.html?boxId=" + boxId);
+
+				/*-----floating menu script-----*/
+				$('#menu').click(function(){
+        			$('.responsiveMenu').toggleClass('expand');
+				});
 			});
 		</script>
 	</head>
