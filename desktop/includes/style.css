@@ -338,18 +338,23 @@ main > .miniWrapper > section > p {
 
 
 
-/*===============pickup - page================*/
-
-.pickupPackage {
+/*===============Pickup-page================*/
+.boxNav {
+    width: 100%;
+    height: 85px;
+}
+.mainContent {
+    min-height: 590px;
+}
+.main{
     width: 83%;
-    height: 675px;
     float: left;
     position: relative;
     margin-top: 1%;
     box-shadow: 5px 5px 5px #888888;
     background: #861c11;
 }
-.pickupPackage > ul {
+.boxNav > ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -362,11 +367,11 @@ main > .miniWrapper > section > p {
     height: 60px;
     background: #ffffff;
 }
-.pickupPackage > ul > li {
+.boxNav > ul > li {
     float: right;
     width: 33%;
 }
-.pickupPackage > ul > li a {
+.boxNav > ul > li a {
     display: block;
     color: #c81925;
     text-align: center;
@@ -375,7 +380,7 @@ main > .miniWrapper > section > p {
     font-weight: bold;
     font-size: 1.3em;
 }
-.pickupPackage > ul > li a.active {
+.boxNav > ul > li a.active {
     background: #e6e6e6;
 }
 .lineN {
@@ -386,7 +391,6 @@ main > .miniWrapper > section > p {
     top: 80%;
     left: 62.8%;
 }
-
 input[type='text'][name='search'] {
     width: 130px;
     box-sizing: border-box;
@@ -495,21 +499,19 @@ input[type='submit']:focus {
     margin-right: 2%;
     margin-top: 5%;
 }
-h3 {
-    width: 27%;
+.boxNav > h3 {
+    width: 28%;
     color: #ffffff;
-    float: left;
-    margin-left: 5.7%;
+    margin-left: 6%;
     font-size: 2.8em;
-    margin-top: 4.5%;
+    float: left;
 }
 .lineD {
-    width: 22.5%;
+    width: 23%;
     background-color: #d6d6d6;
     height: 1px;
-    position: absolute;
-    top: 12%;
-    left: 7.5%;
+    float: left;
+    margin-left: 7.2%;
 }
 .title {
     width: 11%;
@@ -541,20 +543,19 @@ h3 {
 .droneSide{
     width: 39%;
     float: left;
-    position: relative;
-    right: 32.7%;
+    height: 100%;
 }
 .droneBox {
     position: relative;
-    width: 30%;
-    bottom: 90%;
+    width: 49%;
     float: right;
-    margin-right: 2%;
+    margin-right: 1%;
     margin-top: 5%;
 }
 .packageSide {
-    float: right;
-
+    float: left;
+    width: 61%;
+    height: 100%;
 }
 .droneDel {
     width: 85%;
@@ -566,8 +567,7 @@ h3 {
     box-shadow: 4px 4px 4px #000000;
 }
 .packageNum > form {
-    position: relative;
-    bottom: 25%;
+    margin-top: 2%;
 }
 .packageNum > form > .packageLine {
     width: 89%;
@@ -577,7 +577,6 @@ h3 {
     font-size: 1.0em;
     padding-right: 3%;
 }
-
 input[type='text'][name='droneNumber'] {
     margin-top: 2%;
     background: #d7d7d7;
