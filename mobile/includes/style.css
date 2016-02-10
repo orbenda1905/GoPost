@@ -58,19 +58,16 @@ header {
 .expand {
 	display: block !important;
 }
-
 header > h1 {
 	font-size: 1.5em;
-	width: 50%;
+	width: 60%;
 }
-
 header > section {
 	height: 50%;
 	width: 50%;
 	float: right;
 	margin-top: 2%;
 }
-
 .welcome {
 	width: 65%;
 	font-size: 0.9em;
@@ -107,7 +104,6 @@ main {
 .pickUpForm {
 	width: 100%;
 	height: 100%;
-
 }
 
 .pickUpForm > label {
@@ -158,6 +154,7 @@ label > p {
 	font-weight: bold;
     border: none;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .greyLine {
@@ -431,8 +428,134 @@ li > a {
                 no-repeat;
 }
 
+/*========Payment - Page=========*/
+
+.water {
+    background: url(../images/water.png) no-repeat center;
+}
+.tax {
+   background: url(../images/tax.png) no-repeat center;
+}
+.electric {
+   background: url(../images/electric.png) no-repeat center;
+    margin-top: 4%;
+}
+.gas {
+   background: url(../images/gas.png) no-repeat center;
+   margin-top: 4%;
+}
+
+.electricForm {
+    width: 100%;
+	height: 100%;
+}
+.electricInput {
+    width: 80%;
+    float: right;
+    margin-right: 8%;
+	border: none;
+	direction: rtl;
+	font-size: 1.0em;
+	color: #c81925;
+    padding: 15px 5px 12px 15px;
+}
+
+.electricForm > .sendButton {
+    margin-top: 10%;
+    width: 50%;
+    margin-left: 7%;
+    cursor: pointer;
+}
+
+/*=======Electricity Bill - Page=========*/
 
 
+.field {
+    width: 50%;
+    float: left;
+    margin-left: 4%;
+    margin-top: 3%;
+	border: none;
+	font-size: 1.0em;
+	color: #c81925;
+    padding: 10px 5px 12px 15px;
+    text-align: center;
+}
+.label {
+    color: #ffffff;
+    float: right;
+    margin-right: 3%;
+    margin-top: 5%;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+}
+.billKind {
+    background: url(../images/paymentKind.png) no-repeat ;
+    width: 50%;
+    height: 35px;
+    float: right;
+    margin-right: 43.5%;
+    margin-top: 3%;
+}
+
+input[type='text'][name='ExpriyDate'] {
+    width: 20%;
+}
+
+.electricForm > p {
+    color: #ffffff;
+    float: left;
+    margin-top: 5%;
+    margin-left: 2%;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.sendPay {
+    width: 30%;
+    cursor: pointer;
+	background: #ffffff;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	font-size: 1.3em;
+	margin-top: 12%;
+    margin-left: 8%;
+	color: #ca151d;
+	font-weight: bold;
+    border: none;
+    border-radius: 3px;
+}
+.lineE {
+    width: 93%;
+    background: #ffffff;
+    height: 1px;
+    float: left;
+    margin-left: 4%;
+    margin-top: 8%;
+}
+.sum {
+    color: #ffffff;
+    float: right;
+    margin-top: 4%;
+    margin-right: 4%;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+.bill {
+    float: left;
+    margin-top: 4%;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.6em;
+    margin-left: 5%;
+}
+.billSum {
+    width: 90%;
+}
+
+
+/*=========Responsive Page============*/
 
 @media (min-width: 475px) and (max-width: 590px) {
 	#wrapper {
@@ -492,5 +615,20 @@ li > a {
 		left: -490%;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
