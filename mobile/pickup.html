@@ -5,14 +5,23 @@
 		<title> Go Post - Pickup </title>
 		<link rel="stylesheet" href="includes/style.css">
 		<script src="includes/jquery.min.js"></script>
-		<script src="includes/script.js"></script>
+		<script src="includes/pickupScreen.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+		<script>
+			$(document).ready(function() {
+				fillForm();
+			});
+		</script>
+-->
 	</head>
 	<body>
+<!--
             <div id="light">
                 <h2>שלום, החבילה תטען ב-5 דקות הקרובות למכונת האיסוף בסניף המבוקש <br> תודה !</h2>
             </div>
             <div id="fade"></div>
+-->
             <div id="wrapper">
 			<header>
 				<a id="logo" href="index.html"></a>
@@ -40,7 +49,7 @@
 				<form class="pickUpForm" action="#">
 					<label>
 						<p>מספר חבילה</p>
-						<input class="input" type="text">
+						<input class="input" type="text" readonly>
 						<div class="greyLine"></div>
 					</label>
 					<label>
@@ -65,6 +74,6 @@
 				</form>
 			</main>
 		</div>
-		<script>message();</script>
+<!--		<script>message();</script>-->
 	</body>
 </html>

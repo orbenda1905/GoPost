@@ -1,0 +1,602 @@
+* {
+    margin: 0 auto;
+    padding: 0px;
+}
+
+#wrapper {
+    width: 1000px;
+	margin-top: 5px;
+	position: relative;
+
+}
+header, main, section, nav {
+    display: block;
+}
+header {
+    width: 100%;
+    height: 220px;
+    background-color: #ca151d;
+    position: relative;
+	float: left;
+}
+.dataNav {
+    width: 100%;
+    background-color: #ffffff;
+    height: 70px;
+}
+
+.dataUl {
+    list-style-type: none;
+    width: 54%;
+    float: right;
+	height: 100%;
+    margin-right: 16%;
+}
+
+.dataUl > li {
+    float: right;
+	height: 75%;
+    width: 25%;
+    margin-top: 3%;
+    color: #ca151d;
+    direction: rtl;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.dataUl > li > b {
+    color: #909090;
+}
+
+.logo {
+    background: url(../images/logo.jpg);
+    width: 40%;
+    height: 130px;
+    display: block;
+}
+
+.logoSite {
+    width: 25%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    top: 0px;
+    left: 5%;
+}
+
+.date {
+    width: 20%;
+    height: 18%;
+    background-color: #ffffff;
+    position: absolute;
+	padding-top: 0.2%;
+    top: 87%;
+    left: 7.5%;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.6em;
+    color: #ca151d;
+    font-weight: bold;
+}
+.breadcrumb {
+    width: 30%;
+    height: 13%;
+    margin-top: 12%;
+    margin-right: 19%;
+    direction: rtl;
+    background-color: #ca151d;
+}
+.breadcrumb > li a {
+    color: #ffffff;
+    font-weight: bold;
+}
+.breadcrumb > li.active {
+    color: #ffffff;
+}
+
+.clear {
+    clear: both;
+}
+
+h1 {
+    color: #ffffff;
+	float: right;
+	margin-right: 20%;
+	margin-top: 5%;
+    font-size: 3.0em;
+}
+
+.line {
+    width: 19%;
+    background-color: #d6d6d6;
+    height: 1px;
+    position: absolute;
+    top: 80%;
+    left: 60%;
+}
+
+nav {
+    height: 910px;
+    background-color: #ca151d;
+	color: #ffffff;
+    width: 16%;
+	float: right;
+    position: absolute;
+	right: 0px;
+}
+
+nav > p.login {
+	margin-top: 15%;
+	padding: 0px 4px 10px 4px;
+	text-align: center;
+}
+
+nav > p.name {
+    padding: 0px 4px 0px 4px;
+    text-align: center;
+}
+
+nav > p > a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.profilePic {
+	height: 170px;
+	width: 100%;
+	background-image: url(../images/user.png);
+}
+
+.sideNav {
+	width: 100%;
+	position: relative;
+	top: 2%;
+}
+
+.sideNav > li {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0;
+    width: 100%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-align: center;
+}
+
+.sideNav > li > a {
+    display: block;
+	border-bottom: 2px solid #ca151d;
+	text-decoration: none;
+    width: 100%;
+    color: #ffffff;
+}
+
+.sideNav > li > a:hover {
+    border-color: #d6d6d6;
+    border-radius: 3px;
+}
+
+.drone {
+    width: 35%;
+    height: 260px;
+    background-color: #c11520;
+    float: left;
+    position: relative;
+    box-shadow: 5px 5px 5px #888888;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.courier {
+    width: 47%;
+    height: 260px;
+    background-color: #7e090d;
+    position: relative;
+    float: left;
+    box-shadow: 5px 5px 5px #888888;
+    margin-top: 1%;
+}
+.package {
+    width: 100%;
+    height: 180px;
+    background-color: #e61624;
+    position: relative;
+    box-shadow: 5px 5px 5px #888888;
+}
+.pickup {
+    width: 35%;
+    height: 400px;
+    background-color: #841c0f;
+    position: relative;
+    float: left;
+    box-shadow: 5px 5px 5px #888888;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+.report {
+    width: 100%;
+    height: 209px;
+    background-color: #a02c0f;
+    position: relative;
+    box-shadow: 5px 5px 5px #888888;
+    margin-top: 2.1%;
+}
+.miniWrapper {
+    float: left;
+    width: 47%;
+    margin-top: 1%;
+}
+h2 {
+    color: #ffffff;
+    float: right;
+    padding-right: 5%;
+    font-size: 2.5em;
+    direction: rtl;
+}
+img {
+    padding-left: 5%;
+    padding-top: 2%;
+    float: left;
+}
+.monReport {
+    width: 30%;
+    margin-top: 4%;
+    margin-right: 45%;
+}
+.dayReport {
+    width: 25%;
+    padding-right: 2%;
+    margin-top: 2%;
+}
+.bold {
+    font-size: 2.0em;
+    font-weight: bold;
+}
+/*=============drone============*/
+main > section > p {
+    color: #ffffff;
+    text-align: center;
+}
+.drone > p.top {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    padding-right: 5%;
+}
+.drone > p.right {
+    margin-top: 10%;
+    float: right;
+    padding-right: 4.5%;
+}
+.drone > p.left {
+    float: left;
+    margin-top: 10%;
+    padding-left: 30%;
+}
+/*==============================*/
+
+/*=============courier============*/
+.courier > p.top {
+    position: absolute;
+    top: 25%;
+    right: 1%;
+    padding-right: 5%;
+}
+.courier > p.right {
+    margin-top: 1.5%;
+    float: right;
+    padding-right: 4.5%;
+}
+.courier > p.left {
+    float: left;
+    position: absolute;
+    top: 74%;
+    right: 7%;
+}
+.courier > p.leftB {
+    float: left;
+    margin-top: 15%;
+    padding-left: 40%;
+}
+/*==============================*/
+
+/*=============pickup============*/
+.pickup > p.top {
+    position: absolute;
+    top: 35%;
+    right: 4%;
+}
+.pickup > p.right {
+    margin-top: 30%;
+    float: right;
+    padding-right: 5%;
+}
+.pickup > p.left {
+    float: left;
+    position: absolute;
+    top: 72%;
+    right: 5%;
+}
+/*==============================*/
+
+/*=============package============*/
+main > .miniWrapper > section > p {
+    color: #ffffff;
+    text-align: center;
+}
+.package > p.top {
+    position: absolute;
+    top: 55%;
+    right: 0px;
+    padding-right: 5%;
+}
+.package > p.right {
+    position: absolute;
+    top: 55%;
+    left: 45%;
+}
+/*==============================*/
+
+
+
+/*===============Pickup-page================*/
+.boxNav {
+    width: 100%;
+    height: 85px;
+}
+.mainContent {
+    min-height: 590px;
+}
+.mainP {
+    width: 83%;
+    float: left;
+    position: relative;
+    margin-top: 1%;
+    box-shadow: 5px 5px 5px #888888;
+    background: #861c11;
+}
+.mainD {
+    width: 83%;
+    float: left;
+    position: relative;
+    margin-top: 1%;
+    box-shadow: 5px 5px 5px #888888;
+    background: #ca151d;
+}
+.boxNav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 60%;
+    float: right;
+    margin-right: 1%;
+    margin-top: 3%;
+    border-radius: 3px;
+    height: 60px;
+    background: #ffffff;
+}
+.boxNav > ul > li {
+    float: right;
+    width: 33%;
+}
+.boxNav > ul > li a {
+    display: block;
+    color: #c81925;
+    text-align: center;
+    padding: 18px 17px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.boxNav > ul > li a.active {
+    background: #e6e6e6;
+}
+.lineN {
+    width: 16.7%;
+    background-color: #d6d6d6;
+    height: 1px;
+    position: absolute;
+    top: 80%;
+    left: 62.8%;
+}
+input[type='text'][name='search'] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    font-size: 1.1em;
+    background-color: #ffffff;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s;
+    transition: width 0.4s;
+    position: absolute;
+    top: 5.1%;
+    left: 13%;
+    color: #c81925;
+    font-weight: bold;
+}
+input[type=text]:focus {
+    width: 25%;
+}
+.search {
+    position: absolute;
+    top: 4.5%;
+    left: 8.5%;
+}
+.send {
+   background: url(../images/pickup.png) #861c11;
+    width: 12.5%;
+    height: 85px;
+    border: none;
+    margin-top: 1%;
+}
+.packageDel {
+    width: 95%;
+    height: 100px;
+    background: #d7d7d7;
+    margin-right: 3%;
+    margin-top: 5%;
+    border-radius: 7px;
+    box-shadow: 4px 4px 4px #000000;
+}
+.packageNum {
+    width: 100%;
+    height: 35px;
+    background: #ffffff;
+    border-radius: 7px;
+}
+.packageNum > p {
+    text-align: center;
+    padding-top: 2%;
+    color: #c81925;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.packageNum > form > label {
+    float: right;
+    margin-right: 3%;
+    margin-top: 6%;
+    color: #c81925;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.packageLine {
+    width: 90%;
+    background-color: #ffffff;
+    height: 1px;
+    float: right;
+    margin-right: 2%;
+}
+input[type='text'][name='packageNumber'] {
+    margin-top: 6%;
+    background: #d7d7d7;
+    border: none;
+    width: 60%;
+    margin-left: 9%;
+    color: #ffffff;
+    padding: 8px 0px 0px 10px;
+    text-align: center;
+    font-size: 1.3em;
+}
+input[type='text'][name='packageNumber']:focus {
+    outline: none;
+}
+input[type='submit']:focus {
+    outline: none;
+}
+.circle {
+	width: 13%;
+	height: 30px;
+	background: #e51c29;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+    position: absolute;
+    right: 0%;
+}
+.circle > p {
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 13%;
+}
+.box {
+    position: relative;
+    width: 30%;
+    float: right;
+    margin-right: 2%;
+    margin-top: 5%;
+}
+.boxNav > h3 {
+    width: 27%;
+    color: #ffffff;
+    margin-left: 6%;
+    font-size: 2.8em;
+    float: left;
+}
+.lineD {
+    width: 23%;
+    background-color: #d6d6d6;
+    height: 1px;
+    float: left;
+    margin-left: 7.2%;
+}
+.title {
+    width: 11%;
+}
+.titleLine {
+    width: 8%;
+    background-color: #d6d6d6;
+    height: 1px;
+    position: absolute;
+    top: 82%;
+    left: 69%;
+}
+.flyDrone {
+    background: url(../images/drone.png);
+    width: 35%;
+    height: 110px;
+    position: relative;
+    left: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    float: left;
+}
+.flyDrone > .circle {
+    width: 28%;
+    position: absolute;
+    top: 37.5%;
+    right: 37.5%;
+}
+.droneSide{
+    width: 39%;
+    float: left;
+    height: 100%;
+}
+.droneBox {
+    position: relative;
+    width: 49%;
+    float: right;
+    margin-right: 1%;
+    margin-top: 5%;
+}
+.packageSide {
+    float: left;
+    width: 61%;
+    height: 100%;
+}
+.droneDel {
+    width: 85%;
+    height: 170px;
+    background: #d7d7d7;
+    margin-right: 3%;
+    margin-top: 5%;
+    border-radius: 7px;
+    box-shadow: 4px 4px 4px #000000;
+}
+.packageNum > form {
+    margin-top: 2%;
+}
+.packageNum > form > .packageLine {
+    width: 89%;
+    margin-right: 5%;
+}
+.packageNum > form > label {
+    font-size: 1.0em;
+    padding-right: 3%;
+}
+input[type='text'][name='droneNumber'] {
+    margin-top: 2%;
+    background: #d7d7d7;
+    border: none;
+    width: 50%;
+    margin-left: 11%;
+    color: #ffffff;
+    padding: 8px 0px 0px 10px;
+    text-align: center;
+    font-size: 1.3em;
+}
+input[type='text'][name='droneNumber']:focus {
+    outline: none;
+}
+

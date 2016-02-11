@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Go Post - Electricity Bill </title>
+		<link rel="stylesheet" href="includes/style.css">
+		<script src="includes/jquery.min.js"></script>
+		<script src="includes/pickupScreen.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<a id="logo" href="#"></a>
+				<section>
+					<p class="welcome">שלום שני, <a href="#">התנתק/י</a></p>
+					<div class="mobileMenu">
+						    <a id="menu" href="#"></a>
+						<div class="responsiveMenu">
+							<ul>
+							   	<li><a class="deliveryM" href="deliveryList.html" alt="מעקב משלוחים" title="מעקב משלוחים"></a></li>
+								<li><a class="informationM" href="#" alt="בירור מידע" title="בירור מידע"></a></li>
+								<li><a class="paymentM" href="payment.html" alt="תשלומים" title="תשלומים"></a></li>
+								<li><a class="lineOrderM" href="#" alt="זימון תור" title="זימון תור"></a></li>
+								<li><a class="exchangeM" href="#" alt="מט״ח" title="מט״ח"></a></li>
+								<div class="clear"></div>
+							</ul>
+                            <div class="lineMenu"></div>
+     					</div>
+					</div>
+					<div class="clear"></div>
+				</section>
+                <div class="clear"></div>
+				<h1>חשמל - חברת חשמל</h1>
+			</header>
+			<main>
+				<form class="electricForm" action="#">
+					<label class="label">שם פרטי</label>
+				    <input type="text" class="field" name="fname">
+				    <label class="label">שם משפחה</label>
+				    <input type="text" class="field" name="lname">
+				    <label class="label">ת.ז</label>
+				    <input type="text" class="field" name="id">
+				    <div class="billKind"></div>
+				    <label class="label">מספר כרטיס</label>
+				    <input type="text" class="field" name="cardNumber">
+				    <label class="label">תוקף</label>
+				    <input type="text" class="field" name="ExpriyDate"><p>CCV</p>
+				    <div class="lineE"></div>
+				    <div class="clear"></div>
+				    <div class="billSum">
+				        <p class="sum">סה״כ לתשלום</p>
+				        <p class="bill">158₪</p>
+				    </div>
+					<input class="sendPay" type="submit" value="אישור">
+				</form>
+			</main>
+		</div>
+	</body>
+</html>

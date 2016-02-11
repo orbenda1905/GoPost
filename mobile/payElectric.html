@@ -2,29 +2,18 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title> Go Post - PickUpOptions </title>
+		<title>Go Post - Pay Electric </title>
 		<link rel="stylesheet" href="includes/style.css">
 		<script src="includes/jquery.min.js"></script>
-<!--		<script src="includes/script.js"></script>-->
+		<script src="includes/pickupScreen.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script>
-			$(document).ready(function() {
-				var boxId = $(location).attr("href").split("?")[1].split("=")[1];//getting the boxId from the url
-				$(".selfPickup").attr("href", "pickup.html?boxId=" + boxId);
-
-				/*-----floating menu script-----*/
-				$('#menu').click(function(){
-        			$('.responsiveMenu').toggleClass('expand');
-				});
-			});
-		</script>
 	</head>
 	<body>
 		<div id="wrapper">
 			<header>
-				<a id="logo" href="index.html"></a>
+				<a id="logo" href="#"></a>
 				<section>
-				<p class="welcome">שלום שני, <a href="#">התנתק/י</a></p>
+					<p class="welcome">שלום שני, <a href="#">התנתק/י</a></p>
 					<div class="mobileMenu">
 						    <a id="menu" href="#"></a>
 						<div class="responsiveMenu">
@@ -41,17 +30,17 @@
 					</div>
 					<div class="clear"></div>
 				</section>
-				<div class="clear"></div>
-				<h1>איסוף באמצעות</h1>
+                <div class="clear"></div>
+				<h1>חשמל - חברת חשמל</h1>
 			</header>
-			<nav>
-				<ul>
-					<li><a class="deliveryGuy" href="deliverySchdule.html"></a></li>
-					<li><a class="drone" href="droneSchedule.html"></a></li>
-					<li><a class="selfPickup" href="pickup.html"></a></li>
-					<div class="clear"></div>
-				</ul>
-			</nav>
+			<main>
+				<form class="electricForm" action="#">
+					<label>
+						<input type="text" class="electricInput" placeholder="מספר חשבונית">
+					</label>
+					<input class="sendButton" type="submit" value="הצג פרטי תשלום">
+				</form>
+			</main>
 		</div>
 	</body>
 </html>
