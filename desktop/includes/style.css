@@ -599,4 +599,69 @@ input[type='text'][name='droneNumber'] {
 input[type='text'][name='droneNumber']:focus {
     outline: none;
 }
+/*--------------lighbox classes----------------*/
+#fade{
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    z-index: 1001;
+    -moz-opacity: 0.7;
+    opacity: 0.70;
+    filter: alpha(opacity=70);
+}
+#light {
+    display: none;
+    position: absolute;
+	font-size: 1.2em;
+    top: 30%;
+    left: 10%;
+    width: 80%;
+    padding: 20px;
+    background: #ffffff;
+    z-index: 1002;
+    overflow: visible;
+    direction: rtl;
+    border-radius: 3px;
+}
+
+.camera {
+    background-image: url(../images/camera.png);
+    width: 48px;
+    height: 48px;
+    z-index: 1;
+    background-color: #ffffff;
+    border: none;
+    float: left;
+}
+#light > .scan {
+    font-size: 1.2em;
+    margin-top: 3%;
+}
+#light > h2 {
+    font-size: 1.0em;
+    text-align: center;
+
+}
+#light > p {
+    font-size: 0.8em;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+}
+
+.waitingSign {
+/*	display: none;*/
+	position: fixed;
+	z-index: 1000;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	background:
+                url('http://i.stack.imgur.com/FhHRx.gif') 50% 50% no-repeat;
+}
+
 
