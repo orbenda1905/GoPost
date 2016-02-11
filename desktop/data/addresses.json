@@ -1,0 +1,29 @@
+{
+	"dashboard" : [
+		{
+			"drone" : {
+				"waiting" : "6",
+				"delivered" : "7",
+				"delivering" : "8",
+				"total" : "15"
+			},
+			"delivery" : {
+				"available" : "6",
+				"inShift" : "7",
+				"waiting" : "8",
+				"delivered" : "9",
+				"total" : "20"
+			},
+			"pickup" : {
+				"waiting" : "6",
+				"delivered" : "7",
+				"loaded" : "8",
+				"total" : "15"
+			},
+			"boxes" : {
+				"waiting" : "6",
+				"total" : "50"
+			}
+		}
+	]
+}
