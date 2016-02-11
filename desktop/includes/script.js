@@ -4,8 +4,47 @@ $(document).ready(function() {
 	$.getJSON("data/addresses.json", function(data) {
 		fillDashboard(data);
 	});
-
+	defineMotions();//define the click motions on each brick on the main menu
+	setBricksLinks();
 })
+
+function setBricksLinks() {
+//	setCourierLink();
+	setPickupLink();
+//	setDroneLink();
+}
+
+function setPickupLink() {
+	$(".pickup").on("click", function() {
+		$.get("ajax/newPIckup.html", function(data) {
+			$("main").remove();
+			$("#wrapper").append(data);
+		});
+	});
+}
+
+function defineMotions() {
+	var courier = $(".courier");
+	var drone = $(".drone");
+	var package = $(".package");
+	var report = $(".report");
+	var pickup = $(".pickup");
+	makeClickMotion(courier);
+	makeClickMotion(drone);
+	makeClickMotion(package);
+	makeClickMotion(report);
+	makeClickMotion(pickup);
+}
+
+function makeClickMotion(obj) {
+	obj.mousedown(function() {
+		$(this).css("box-shadow", "none");
+	})
+	.mouseup(function() {
+		$(this).css("box-shadow", "5px 5px 5px #888888");
+	})
+	.css("cursor", "pointer");
+}
 
 function showCurrentDate(position) {
 	var date = new Date();
@@ -17,7 +56,7 @@ function showCurrentDate(position) {
 
 function markCurrentPage(position) {
 	var a = document.getElementsByClassName("sideNav")[0].children[position].firstChild;
-	console.log();
+//	console.log();
 	a.style.borderColor = "#d6d6d6";
 	a.style.borderRadius = "3px";
 }
@@ -53,7 +92,7 @@ function fillDashboard(data) {
 		pickup[5].children[1].innerHTML = v.pickup.loaded;
 
 		//boxes filling
-		console.log(boxes);
+//		console.log(boxes);
 		boxes[3].children[1].innerHTML = v.boxes.waiting;
 		boxes[4].children[1].innerHTML = v.boxes.total;
 	});
