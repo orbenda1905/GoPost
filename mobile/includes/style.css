@@ -107,6 +107,12 @@ main {
 	padding-bottom: 5%;
 }
 
+.load {
+    background: url(../images/loadingPage.png) no-repeat center;
+    width: 100%;
+    height: 620px;
+}
+
 .pickUpForm {
 	width: 100%;
 	height: 100%;
