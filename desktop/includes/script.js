@@ -1,3 +1,5 @@
+var pickupBoxes;
+
 $(document).ready(function() {
 	showCurrentDate();
 	markCurrentPage(1);
@@ -16,11 +18,54 @@ function setBricksLinks() {
 
 function setPickupLink() {
 	$(".pickup").on("click", function() {
+//		$("#wrapper").fadeIn(200).append("<div class='waitingSign'></div>");
+//		$("#wrapper").append("<div id='fade'></div>");
 		$.get("ajax/newPIckup.html", function(data) {
 			$("main").remove();
 			$("#wrapper").append(data);
+			markCurrentPage(2);
+			loadPickupBoxes();
 		});
 	});
+}
+
+function loadPickupBoxes() {
+	$.get("fetchBoxes.php", {action: "pickup"}, function(data) {
+		pickupBoxes = $.parseJSON(data);
+//		console.log(json);
+//		$.each(pickupBoxes, function(k, v) {
+//			console.log(v.personId);
+//			displayAllPickupBoxes();
+//		});
+		displayAllPickupBoxes();
+	});
+}
+
+function displayAllPickupBoxes() {
+	var mainContent = $(".mainContent");
+	var i = 1;
+	$.each(pickupBoxes, function(k, v) {
+		appendBox(v, mainContent, i);
+		i++;
+	});
+}
+
+function appendBox(objVal, htmlTag, boxNum) {
+	var box = $("<section class='box'></section>");
+	box.append("<div class='circle'><p>" + boxNum + "</p></div>");
+	var packageDel = $("<section class='packageDel'></section>");
+	var packageNum = $("<div class='packageNum'></div>");
+	packageNum.append("<p>" + objVal.deliveryId + "</p>");
+	var form = $("<form action='#'></form>");
+	var label = $("<label></label>");
+	label.append("סטטוס<input type='text' name='packageNumber' readonly>");
+	form.append(label);
+	form.append("<div class='packageLine'></div>");
+//	packageNum.append(form);
+	packageDel.append(packageNum);
+	packageDel.append(form);
+	box.append(packageDel);
+	htmlTag.append(box);
 }
 
 function defineMotions() {
@@ -55,8 +100,18 @@ function showCurrentDate(position) {
 }
 
 function markCurrentPage(position) {
+	var aTag = document.getElementsByClassName("sideNav")[0];
+	var size = aTag.children.length;
+	for (var i = 0; i < size; i++) {
+		if (i === position) {
+			aTag.children[i].firstChild.style.borderColor = "#d6d6d6";
+			aTag.children[i].firstChild.style.borderRadius = "3px";
+			continue;
+		}
+		aTag.children[i].firstChild.style.borderColor = "#ca151d";
+	}
+	return;
 	var a = document.getElementsByClassName("sideNav")[0].children[position].firstChild;
-//	console.log();
 	a.style.borderColor = "#d6d6d6";
 	a.style.borderRadius = "3px";
 }
