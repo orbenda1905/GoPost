@@ -77,13 +77,13 @@ header > section {
 .welcome {
 	width: 65%;
 	font-size: 0.9em;
-	margin-left: 40%;
+	margin-left: 39%;
 }
 
 #logo {
     width: 150px;
     height: 147px;
-    background: url(../images/logo.png) no-repeat;
+    background: url(../images/logocopy.png) no-repeat;
 	display: block;
 	position: absolute;
 }
@@ -291,7 +291,7 @@ li {
 	float: left;
 	display: block;
 	background: #c81925;
-	height: 170px;
+	height: 155px;
 	width: 50%;
 }
 
@@ -302,7 +302,7 @@ li > a {
 }
 
 .delivery {
-	background: url('../images/delivery.png') no-repeat center;
+	background: url('../images/delivery%20copy.png') no-repeat center;
 }
 
 .deliveryM {
@@ -310,7 +310,7 @@ li > a {
 }
 
 .information {
-	background: url('../images/info.png') no-repeat center;
+	background: url('../images/info%20copy.png') no-repeat center;
 }
 
 .informationM {
@@ -318,7 +318,7 @@ li > a {
 }
 
 .payment {
-	background: url('../images/payment.png') no-repeat center;
+	background: url('../images/payment%20copy.png') no-repeat center;
 }
 
 .paymentM {
@@ -326,7 +326,7 @@ li > a {
 }
 
 .lineOrder {
-	background: url('../images/queue.png') no-repeat center;
+	background: url('../images/queue%20copy.png') no-repeat center;
 }
 
 .lineOrderM {
@@ -334,7 +334,7 @@ li > a {
 }
 
 .exchange {
-	background: url('../images/change.png') no-repeat center;
+	background: url('../images/change%20copy.png') no-repeat center;
 }
 
 .exchangeM {
@@ -437,18 +437,18 @@ li > a {
 /*========Payment - Page=========*/
 
 .water {
-    background: url(../images/water.png) no-repeat center;
+    background: url(../images/water%20copy.png) no-repeat center;
 }
 .tax {
-   background: url(../images/tax.png) no-repeat center;
+   background: url(../images/tax%20copy.png) no-repeat center;
 }
 .electric {
-   background: url(../images/electric.png) no-repeat center;
-    margin-top: 4%;
+   background: url(../images/electric%20copy.png) no-repeat center;
+    margin-top: 14%;
 }
 .gas {
    background: url(../images/gas.png) no-repeat center;
-   margin-top: 4%;
+   margin-top: 14%;
 }
 
 .electricForm {
@@ -458,7 +458,7 @@ li > a {
 .electricInput {
     width: 80%;
     float: right;
-    margin-right: 8%;
+    margin-right: 8.5%;
 	border: none;
 	direction: rtl;
 	font-size: 1.0em;
@@ -469,7 +469,7 @@ li > a {
 .electricForm > .sendButton {
     margin-top: 10%;
     width: 50%;
-    margin-left: 7%;
+    margin-left: 6%;
     cursor: pointer;
 }
 
