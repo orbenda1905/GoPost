@@ -1,0 +1,42 @@
+{ "electricity": [
+    {
+		"rec_Code": "123456",
+		"total": "220"
+	},
+    {
+		"rec_Code": "123455",
+		"total": "200"
+	},
+    {
+		"rec_Code": "123454",
+		"total": "210"
+	},
+    {
+		"rec_Code": "123453",
+		"total": "310"
+	},
+    {
+		"rec_Code": "123452",
+		"total": "334"
+	},
+    {
+		"rec_Code": "123451",
+		"total": "543"
+	},
+    {
+		"rec_Code": "123450",
+		"total": "400"
+	},
+    {
+		"rec_Code": "123466",
+		"total": "126"
+	},
+    {
+		"rec_Code": "123465",
+		"total": "280"
+	},
+    {
+		"rec_Code": "123464",
+		"total": "300"
+	}]
+}
