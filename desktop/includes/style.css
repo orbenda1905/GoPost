@@ -632,7 +632,7 @@ input[type='text'][name='droneNumber']:focus {
     direction: rtl;
     border-radius: 3px;
 }
-<<<<<<< HEAD
+
 
 .waitingSign {
 /*	display: none;*/
@@ -655,14 +655,13 @@ input[type='text'][name='droneNumber']:focus {
     background-color: #ffffff;
     border: none;
     float: left;
-=======
+}
 #light > .packageNum {
     height: 39%;
     border-radius: 3px;
     text-align: center;
     color: #c81925;
     font-weight: bold;
->>>>>>> GoPostProject/master
 }
 #light > .packageNum > form {
     width: 100%;
