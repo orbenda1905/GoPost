@@ -72,6 +72,9 @@ function addBox(data) {
 	infoSection.append("<p><b>שולח: </b>" + data.from + "</p>" +
 								"<p><b>סטטוס: </b>" + data.status + "</p>");
 	box.append(infoSection);
+
+    /*tom code */
+    box.append("<div class='tiltLine'></div>");
 	var statusClass = $("<div class='status'></div>");
 	if (data.status === "מוכן") {
 		statusClass.append("<a class='readySts' href=pickupOptions.html?boxId=" + data.id + "></a>");
@@ -90,11 +93,11 @@ function addBox(data) {
 
 function displayInfo(data) {
 	var lightBox = $("<div id='light'></div>");
-	lightBox.append("<h2>פרטי החבילה</h2>");
+	lightBox.append("<h2>פרטי החבילה</h2>" + "<br>");
 	lightBox.append("<p>" + "דואר רשום מספר - " + data.id + "<br>" +
 				  				"השולח - " + data.from + "<br>" +
 				  				"נמען - מקס שיין, רחובות<br>" + "</p><br>");
-	lightBox.append("<h2>פרטי יחידת הדואר לאיסוף</h2>");
+	lightBox.append("<h2>פרטי יחידת הדואר לאיסוף</h2>" + "<br>");
 	var paragraph = $("<p></p>");
 	paragraph.append(data.office + "<br>");
 	paragraph.append("שעות פתיחה:<br>");
