@@ -18,25 +18,25 @@ function setBricksLinks() {
 
 function setPickupLink() {
 	$(".pickup").on("click", function() {
-//		$("#wrapper").fadeIn(200).append("<div class='waitingSign'></div>");
-//		$("#wrapper").append("<div id='fade'></div>");
+		var main = $("main");
+		var waitingSign = $("<div class='cssload-container'>" +
+									 "<div class='cssload-whirlpool'></div></div>");
+		var fade = $("<div id='fade'></div>");
+		fade.append(waitingSign);
+		main.fadeIn(200).append(fade);
 		$.get("ajax/newPIckup.html", function(data) {
-			$("main").remove();
-			$("#wrapper").append(data);
+			fade.siblings().remove();
+			main.attr("class", "mainP");
+			main.append(data);
 			markCurrentPage(2);
 			loadPickupBoxes();
-		});
+			});
 	});
 }
 
 function loadPickupBoxes() {
 	$.get("fetchBoxes.php", {action: "pickup"}, function(data) {
 		pickupBoxes = $.parseJSON(data);
-//		console.log(json);
-//		$.each(pickupBoxes, function(k, v) {
-//			console.log(v.personId);
-//			displayAllPickupBoxes();
-//		});
 		displayAllPickupBoxes();
 	});
 }
@@ -47,6 +47,62 @@ function displayAllPickupBoxes() {
 	$.each(pickupBoxes, function(k, v) {
 		appendBox(v, mainContent, i);
 		i++;
+	});
+	$("#fade").fadeOut(200, function() {
+		$("#fade").remove();
+	});
+	boxStatusChanging();
+}
+
+function boxStatusChanging() {
+	var packageDel = document.getElementsByClassName("packageDel");
+//	console.log(packageDel);
+	var size = packageDel.length;
+	for (var i = 0; i < size; i++) {
+		var boxId = packageDel[i].getElementsByClassName("packageNum")[0].children[0].innerHTML;
+		packageDel[i].onclick = function() {
+			var light = $("<div id='light'></div>");
+			var packageNum = $("<section class='packageNum'></section>");
+			packageNum.append("<p>מספר חבילה - " + boxId + "</p>");
+			var form = $("<form class='lightForm' action='#'></form>");
+			var label = $("<label class='status'></label>");
+			label.append("טעון");
+			label.append("<input type='text' name='updateNumber' readonly></input>");
+			label.append("<div class='alertLine'></div>");
+			form.append(label);
+			packageNum.append(form);
+			light.append(packageNum);
+			light.append("<input type='submit' name='confirm' value='אשר'>");
+			light.append("<input type='submit' name='cancel' value='בטל'>");
+			$(".mainP").prepend("<div id='fade'></div>");
+			$(".mainP").prepend(light);
+			$(".lightForm").button(function() {
+				$("#light").remove();
+				$("#fade").remove();
+			});
+			$(".lightForm").submit(function(e) {
+				e.preventDefault();
+				$("#light").remove();
+				$("#fade").append("<div class='cssload-container'>" +
+									 "<div class='cssload-whirlpool'></div></div>");
+				$.get("updateStatus.php", {action: "pickup", boxId: boxId}, function(data) {
+//					console.log(pickupBoxes[id]);
+
+				});
+			})
+		};
+	}
+	return;
+//	var packageDel = $(".packageDel");
+	$.each(packageDel, function(k, v) {
+		var boxId = v.find("*");
+			console.log(boxId);
+//		v.on("click", function() {
+//
+//			var light = $("<div id='light'></div>");
+//			var packageNum = $("<section class='packageNum'></section>");
+//
+//		});
 	});
 }
 
@@ -60,8 +116,6 @@ function appendBox(objVal, htmlTag, boxNum) {
 	var label = $("<label></label>");
 	label.append("סטטוס<input type='text' name='packageNumber' readonly>");
 	form.append(label);
-//	form.append("<div class='packageLine'></div>");
-//	packageNum.append(form);
 	packageDel.append(packageNum);
 	packageDel.append(form);
 	box.append(packageDel);

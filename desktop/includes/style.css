@@ -655,14 +655,13 @@ input[type='text'][name='droneNumber']:focus {
     background-color: #ffffff;
     border: none;
     float: left;
-=======
+}
 #light > .packageNum {
     height: 39%;
     border-radius: 3px;
     text-align: center;
     color: #c81925;
     font-weight: bold;
->>>>>>> GoPostProject/master
 }
 #light > .packageNum > form {
     width: 100%;
@@ -729,10 +728,10 @@ input[type="submit"][name="cancel"] {
 
 /*============= loading - gif ===============*/
 
-.cssload-container{
+.cssload-container {
 	position: absolute;
-    top: 45%;
-    right: 46%;
+    top: 50%;
+    left: 50%;
     z-index: 1001;
 }
 .cssload-whirlpool,
