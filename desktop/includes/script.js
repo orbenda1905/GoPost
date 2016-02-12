@@ -72,8 +72,8 @@ function boxStatusChanging() {
 			form.append(label);
 			packageNum.append(form);
 			light.append(packageNum);
-			light.append("<input type='submit' name='confirm' value='אשר'>");
-			light.append("<input type='submit' name='cancel' value='בטל'>");
+			form.append("<input type='submit' name='confirm' value='אשר'>");
+			form.append("<input type='submit' name='cancel' value='בטל'>");
 			$(".mainP").prepend("<div id='fade'></div>");
 			$(".mainP").prepend(light);
 			$(".lightForm").button(function() {
@@ -86,7 +86,7 @@ function boxStatusChanging() {
 				$("#fade").append("<div class='cssload-container'>" +
 									 "<div class='cssload-whirlpool'></div></div>");
 				$.get("updateStatus.php", {action: "pickup", boxId: boxId}, function(data) {
-//					console.log(pickupBoxes[id]);
+					console.log(pickupBoxes);
 
 				});
 			})
