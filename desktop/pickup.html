@@ -14,13 +14,6 @@
 	<link rel="stylesheet" href="includes/style.css">
 </head>
     <body>
-
-
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-
-
 		<div id = "wrapper">
 			<header>
 				<section class="dataNav">
@@ -57,6 +50,20 @@
 		   		</ul>
 		   </nav>
 		   <main class="mainP">
+               <div id="light">
+                    <div class="packageNum">
+                    <p>מספר חבילה - RR233342342IL</p>
+                    <form action="#">
+                        <label class="status">סטטוס
+                            <input type="text" name="updateNumber" readonly></input>
+                            <div class="alertLine"></div>
+                        </label>
+                    </form>
+                    </div>
+                    <input type="submit" name="confirm" value="אשר">
+                    <input type="submit" name="cancel" value="בטל">
+                </div>
+                <div id="fade"></div>
                  <section class="boxNav">
                       <ul>
                           <li><a class="active" href="#">כללי</a></li>
