@@ -435,7 +435,7 @@ input[type=text]:focus {
     float: right;
     margin-right: 2%;
     margin-top: 3%;
-	margin-bottom: 3%;
+	margin-bottom: 1%;
 }
 .packageDel {
     width: 95%;
@@ -460,7 +460,11 @@ input[type=text]:focus {
     font-size: 1.5em;
     font-weight: bold;
 }
-
+.packageDel > form {
+	height: 60%;
+	width: 96%;
+	border-bottom: 2px solid #ffffff;
+}
 .packageDel > form > label {
 /*    fl oat: right;*/
 /*    margin-right: 3%;*/
@@ -629,13 +633,6 @@ input[type='text'][name='droneNumber']:focus {
     border-radius: 3px;
 }
 <<<<<<< HEAD
-#light > .packageNum {
-    height: 39%;
-    border-radius: 3px;
-    text-align: center;
-    color: #c81925;
-    font-weight: bold;
-=======
 
 .waitingSign {
 /*	display: none;*/
@@ -658,7 +655,14 @@ input[type='text'][name='droneNumber']:focus {
     background-color: #ffffff;
     border: none;
     float: left;
->>>>>>> origin/master
+=======
+#light > .packageNum {
+    height: 39%;
+    border-radius: 3px;
+    text-align: center;
+    color: #c81925;
+    font-weight: bold;
+>>>>>>> GoPostProject/master
 }
 #light > .packageNum > form {
     width: 100%;
