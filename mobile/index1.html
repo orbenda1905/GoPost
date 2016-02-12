@@ -5,11 +5,18 @@
 		<title> Go Post - HomePage </title>
 		<link rel="stylesheet" href="includes/style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>
-    setTimeout(function(){
-       window.location='index.html';}, 5000);
+            setTimeout(function(){
+                $('html').fadeOut(
+                    1000,  // animation time
+                    function(){
+                        window.location='index.html';
+                    }
+                );
+            }, 3000);
         </script>
-	</head>
+    </head>
 
 	<body>
         <div class="load"</div>
