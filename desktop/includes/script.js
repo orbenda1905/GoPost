@@ -60,7 +60,7 @@ function appendBox(objVal, htmlTag, boxNum) {
 	var label = $("<label></label>");
 	label.append("סטטוס<input type='text' name='packageNumber' readonly>");
 	form.append(label);
-	form.append("<div class='packageLine'></div>");
+//	form.append("<div class='packageLine'></div>");
 //	packageNum.append(form);
 	packageDel.append(packageNum);
 	packageDel.append(form);

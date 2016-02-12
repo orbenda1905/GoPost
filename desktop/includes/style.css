@@ -7,10 +7,15 @@
     width: 1000px;
 	margin-top: 5px;
 	position: relative;
-
 }
 header, main, section, nav {
     display: block;
+}
+main {
+    position: relative;
+    float: left;
+    width: 83%;
+    margin-top: 1%;
 }
 header {
     width: 100%;
@@ -24,7 +29,6 @@ header {
     background-color: #ffffff;
     height: 70px;
 }
-
 .dataUl {
     list-style-type: none;
     width: 54%;
@@ -32,7 +36,6 @@ header {
 	height: 100%;
     margin-right: 16%;
 }
-
 .dataUl > li {
     float: right;
 	height: 75%;
@@ -43,18 +46,15 @@ header {
     text-align: center;
     font-size: 1.4em;
 }
-
 .dataUl > li > b {
     color: #909090;
 }
-
 .logo {
     background: url(../images/logo.jpg);
     width: 40%;
     height: 130px;
     display: block;
 }
-
 .logoSite {
     width: 25%;
     background-color: #ffffff;
@@ -177,23 +177,21 @@ nav > p > a {
 }
 
 .drone {
-    width: 35%;
+    width: 45%;
     height: 260px;
     background-color: #c11520;
     float: left;
     position: relative;
     box-shadow: 5px 5px 5px #888888;
-    margin-top: 1%;
     margin-left: 1%;
 }
 .courier {
-    width: 47%;
+    width: 54%;
     height: 260px;
     background-color: #7e090d;
     position: relative;
     float: left;
     box-shadow: 5px 5px 5px #888888;
-    margin-top: 1%;
 }
 .package {
     width: 100%;
@@ -203,7 +201,7 @@ nav > p > a {
     box-shadow: 5px 5px 5px #888888;
 }
 .pickup {
-    width: 35%;
+    width: 45%;
     height: 400px;
     background-color: #841c0f;
     position: relative;
@@ -222,7 +220,7 @@ nav > p > a {
 }
 .miniWrapper {
     float: left;
-    width: 47%;
+    width: 54%;
     margin-top: 1%;
 }
 h2 {
@@ -437,7 +435,7 @@ input[type=text]:focus {
     float: right;
     margin-right: 2%;
     margin-top: 3%;
-	margin-bottom: 3%;
+	margin-bottom: 1%;
 }
 .packageDel {
     width: 95%;
@@ -462,11 +460,11 @@ input[type=text]:focus {
     font-size: 1.5em;
     font-weight: bold;
 }
-/*
 .packageDel > form {
-
+	height: 60%;
+	width: 96%;
+	border-bottom: 2px solid #ffffff;
 }
-*/
 .packageDel > form > label {
 /*    fl oat: right;*/
 /*    margin-right: 3%;*/
@@ -612,10 +610,7 @@ input[type='text'][name='droneNumber']:focus {
 }
 /*--------------lighbox classes----------------*/
 #fade{
-    display: none;
-    position: fixed;
-    top: 0%;
-    left: 0%;
+    position: absolute;
     width: 100%;
     height: 100%;
     background: #000000;
@@ -625,19 +620,19 @@ input[type='text'][name='droneNumber']:focus {
     filter: alpha(opacity=70);
 }
 #light {
-    display: none;
+    height: 110px;
+    border-radius: 7px;
     position: absolute;
-	font-size: 1.2em;
-    top: 30%;
-    left: 10%;
-    width: 80%;
-    padding: 20px;
-    background: #ffffff;
+    font-size: 1.1em;
+    top: 35%;
+    left: 35%;
+    width: 40%;
+    background: #d6d6d6;
     z-index: 1002;
-    overflow: visible;
     direction: rtl;
     border-radius: 3px;
 }
+<<<<<<< HEAD
 
 .waitingSign {
 /*	display: none;*/
@@ -660,32 +655,163 @@ input[type='text'][name='droneNumber']:focus {
     background-color: #ffffff;
     border: none;
     float: left;
-}
-#light > .scan {
-    font-size: 1.2em;
-    margin-top: 3%;
-}
-#light > h2 {
-    font-size: 1.0em;
+=======
+#light > .packageNum {
+    height: 39%;
+    border-radius: 3px;
     text-align: center;
-
+    color: #c81925;
+    font-weight: bold;
+>>>>>>> GoPostProject/master
 }
-#light > p {
-    font-size: 0.8em;
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation-iteration-count: infinite;
+#light > .packageNum > form {
+    width: 100%;
+    height: 55px;
+    position: absolute;
+}
+.status {
+    color: #c81925;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+    bottom: 34%;
+}
+.alertLine {
+    width: 90%;
+    background-color: #ffffff;
+    height: 1px;
+    margin-top: 1%;
+    margin-right: 6%;
+    float: right;
+}
+input[type='text'][name='updateNumber'] {
+    background: #d6d6d6;
+    border: none;
+    width: 70%;
+    color: #ffffff;
+    padding: 8px 0px 0px 10px;
+    text-align: center;
+    font-size: 1.3em;
+}
+input[type='text'][name='updateNumber']:focus {
+    outline: none;
 }
 
-.waitingSign {
-/*	display: none;*/
-	position: fixed;
-	z-index: 1000;
-	height: 100%;
-	width: 100%;
-	top: 0px;
-	background:
-                url('http://i.stack.imgur.com/FhHRx.gif') 50% 50% no-repeat;
+input[type="submit"][name="confirm"] {
+	border: none;
+	color: #ca151d;
+	background: #d6d6d6;
+	line-height: 190%;
+	font-size: 18px;
+	font-weight: bold;
+	float: left;
+	margin-top: 22%;
+    margin-left: 20%;
+	width: 25%;
+    border-radius: 3px;
+    cursor: pointer;
+}
+input[type="submit"][name="cancel"] {
+	border: none;
+	color: #ca151d;
+	background: #d6d6d6;
+	line-height: 190%;
+	font-size: 18px;
+	font-weight: bold;
+	float: left;
+    margin-top: 22%;
+    margin-left: 8%;
+	width: 25%;
+    border-radius: 3px;
+    cursor: pointer;
+}
+/*===================================*/
+
+/*============= loading - gif ===============*/
+
+.cssload-container{
+	position: absolute;
+    top: 45%;
+    right: 46%;
+    z-index: 1001;
+}
+.cssload-whirlpool,
+.cssload-whirlpool::before,
+.cssload-whirlpool::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border: 1px solid rgb(204,204,204);
+	border-left-color: rgb(0,0,0);
+	border-radius: 974px;
+		-o-border-radius: 974px;
+		-ms-border-radius: 974px;
+		-webkit-border-radius: 974px;
+		-moz-border-radius: 974px;
 }
 
+.cssload-whirlpool {
+	margin: -24px 0 0 -24px;
+	height: 49px;
+	width: 49px;
+	animation: cssload-rotate 1150ms linear infinite;
+		-o-animation: cssload-rotate 1150ms linear infinite;
+		-ms-animation: cssload-rotate 1150ms linear infinite;
+		-webkit-animation: cssload-rotate 1150ms linear infinite;
+		-moz-animation: cssload-rotate 1150ms linear infinite;
+}
 
+.cssload-whirlpool::before {
+	content: "";
+	margin: -22px 0 0 -22px;
+	height: 43px;
+	width: 43px;
+	animation: cssload-rotate 1150ms linear infinite;
+		-o-animation: cssload-rotate 1150ms linear infinite;
+		-ms-animation: cssload-rotate 1150ms linear infinite;
+		-webkit-animation: cssload-rotate 1150ms linear infinite;
+		-moz-animation: cssload-rotate 1150ms linear infinite;
+}
+
+.cssload-whirlpool::after {
+	content: "";
+	margin: -28px 0 0 -28px;
+	height: 55px;
+	width: 55px;
+	animation: cssload-rotate 2300ms linear infinite;
+		-o-animation: cssload-rotate 2300ms linear infinite;
+		-ms-animation: cssload-rotate 2300ms linear infinite;
+		-webkit-animation: cssload-rotate 2300ms linear infinite;
+		-moz-animation: cssload-rotate 2300ms linear infinite;
+}
+
+@keyframes cssload-rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@-o-keyframes cssload-rotate {
+	100% {
+		-o-transform: rotate(360deg);
+	}
+}
+
+@-ms-keyframes cssload-rotate {
+	100% {
+		-ms-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes cssload-rotate {
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-moz-keyframes cssload-rotate {
+	100% {
+		-moz-transform: rotate(360deg);
+	}
+}
+/*========================================*/
