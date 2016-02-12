@@ -66,8 +66,8 @@ function boxStatusChanging() {
 			packageNum.append("<p>מספר חבילה - " + boxId + "</p>");
 			var form = $("<form class='lightForm' action='#'></form>");
 			var label = $("<label class='status'></label>");
-			label.append("טעון");
-			label.append("<input type='text' name='updateNumber' readonly></input>");
+			label.append("סטטוס");
+			label.append("<input type='text' name='updateNumber' readonly>טעון</input>");
 			label.append("<div class='alertLine'></div>");
 			form.append(label);
 			packageNum.append(form);
