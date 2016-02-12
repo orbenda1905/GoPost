@@ -606,6 +606,14 @@ input[type='text'][name='ExpriyDate'] {
 		height: 70px;
 	}
 
+    .tiltLine {
+    background: url(../images/tiltLine.png) no-repeat center;
+        width: 10%;
+        height: 10%;
+        float: left;
+        margin-left: 12%;
+    }
+
 	.rec {
 		border-bottom: 70px solid #909090;
 		border-left: 65px solid transparent;

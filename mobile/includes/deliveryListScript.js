@@ -72,6 +72,9 @@ function addBox(data) {
 	infoSection.append("<p><b>שולח: </b>" + data.from + "</p>" +
 								"<p><b>סטטוס: </b>" + data.status + "</p>");
 	box.append(infoSection);
+
+    /*tom code */
+    box.append("<div class='tiltLine'></div>");
 	var statusClass = $("<div class='status'></div>");
 	if (data.status === "מוכן") {
 		statusClass.append("<a class='readySts' href=pickupOptions.html?boxId=" + data.id + "></a>");
