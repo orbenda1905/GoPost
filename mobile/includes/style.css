@@ -83,7 +83,7 @@ header > section {
 #logo {
     width: 150px;
     height: 147px;
-    background: url(../images/logocopy.png) no-repeat;
+    background: url(../images/logo.png) no-repeat;
 	display: block;
 	position: absolute;
 }
