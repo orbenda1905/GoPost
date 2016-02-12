@@ -72,8 +72,8 @@ function boxStatusChanging() {
 			form.append(label);
 			packageNum.append(form);
 			light.append(packageNum);
-			form.append("<input type='submit' name='confirm' value='אשר'>");
-			form.append("<input type='submit' name='cancel' value='בטל'>");
+			form.append("<button type='submit' name='confirm' value='אשר'>");
+			form.append("<button class='cancel' value='בטל'></button>");
 			$(".mainP").prepend("<div id='fade'></div>");
 			$(".mainP").prepend(light);
 			$(".lightForm").button(function() {
