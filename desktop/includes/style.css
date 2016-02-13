@@ -550,6 +550,14 @@ input[type='submit']:focus {
     top: 82%;
     left: 69%;
 }
+.titleLineDrone {
+    width: 15%;
+    background-color: #d6d6d6;
+    height: 1px;
+    position: absolute;
+    top: 82%;
+    left: 75%;
+}
 .flyDrone {
     background: url(../images/drone.png);
     width: 35%;
