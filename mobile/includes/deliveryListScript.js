@@ -57,7 +57,7 @@ $(document).ready(function() {
 //				alert("box exist");
 				var fade = $("<div id='fade'></div>");
 				var light = $("<div id='light'></div>");
-				light.append("<h2>" + "שגיאה!!" + "</h2>");
+				light.append("<h2>" + "שגיאה!" + "</h2>");
 				light.append("<p>החבילה המבוקשה קיימת כבר במאגר בנוכחי</p>");
 				$("body").append(fade);
 				$("body").append(light);
