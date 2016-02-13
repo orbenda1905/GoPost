@@ -32,7 +32,6 @@ $(document).ready(function() {
 				$('.waitingSign').remove();
 				$("#fade").remove();
 			});
-			window.location.replace("index.html");
 		});
 		displayMessage();
 	});
@@ -47,8 +46,8 @@ function displayMessage() {
 	$("body").prepend("<div id='lightFade'></div>");
 	$("body").prepend(lightBox);
 	$("#lightFade").on("click", function() {
-		$("#light").remove();
-		$("#fade").remove();
+//		$("#light").remove();
+//		$("#fade").remove();
 		window.location.replace("index.html");
 	});
 	$("#fade").show();

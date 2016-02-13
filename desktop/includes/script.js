@@ -224,6 +224,7 @@ function setBoxNavLinks() {
 		e.preventDefault();
 		displayPickupBoxes("all");
 		setBoxNavTabs(0, 1, 2);
+		setBreadCrumbs("איסוף עצמי", "כללי");
 	};
 	tab[1].onclick = function(e) {
 		e.preventDefault();

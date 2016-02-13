@@ -17,6 +17,9 @@ var Client = function (pName, lName, pId) {//class represents client
 var Mazal = new Client("מזל", "ניסמוב", "302945241");
 
 $(document).ready(function() {
+	$('#menu').click(function(){
+        $('.responsiveMenu').toggleClass('expand');
+    });
 	var amount = $(location).attr("href").split("?")[1].split("=")[1];
 //	var billNum = arguments.split("&")[0].split("=")[1];
 //	var amount = arguments.split("&")[1].split("=")[1];
@@ -44,8 +47,10 @@ function displayInfo(amount) {
 	$("body").prepend("<div id='fade'></div>");
 	$("body").prepend(lightBox);
 	$("#fade").on("click", function() {
-		$("#light").remove();
-		$("#fade").remove();
+		window.location.replace("index.html");
+	});
+	$(".confirm").on("click", function() {
+		window.location.replace("index.html");
 	});
 	$("#fade").show();
 	lightBox.show();
