@@ -546,7 +546,7 @@ li > a {
     margin-top: 0.5%;
     padding: 3px 3px 3px 5px;
     width: 60%;
-    font-size: 1.5em;
+    font-size: 1.2em;
     line-height:15px;
     border: none;
     direction: rtl;
@@ -591,16 +591,14 @@ li > a {
     margin-bottom: 3%;
 }
 
-input[type='text'][name='ExpriyDate'] {
+input[type="date"][name='ExpriyDate'] {
     color: #c81925;
     height: 30px;
     margin-bottom: 5%;
     margin-right: 3%;
     margin-top: 0.5%;
     padding: 3px 3px 3px 5px;
-    width: 15%;
-    font-size: 1.5em;
-    line-height: 15px;
+    width: 25%;
     border: none;
     float: right;
 }
@@ -611,21 +609,12 @@ input[type='text'][name='ccv'] {
     margin-left: 5.2%;
     margin-top: 0.5%;
     padding: 3px 3px 3px 5px;
-    width: 15%;
-    font-size: 1.5em;
+    width: 12%;
+    font-size: 1.2em;
     line-height: 15px;
     border: none;
     float: left;
 }
-.electricForm > label > p {
-    color: #ffffff;
-    float: left;
-    margin-top: 2%;
-    font-size: 1.2em;
-    text-align: center;
-    width: 15%;
-}
-
 .sendPay {
     width: 30%;
     cursor: pointer;
@@ -765,6 +754,10 @@ input[type='text'][name='ccv'] {
     .billKind {
         margin-right: 38%;
         width: 55%;
+    }
+    input[type="date"][name='ExpriyDate'] {
+        width: 35%;
+        font-size: 1.0em;
     }
 }
 
