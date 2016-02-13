@@ -16,6 +16,7 @@ main {
     float: left;
     width: 83%;
     margin-top: 1%;
+	min-height: 680px;
 }
 header {
     width: 100%;
@@ -591,6 +592,23 @@ input[type='submit']:focus {
     border-radius: 7px;
     box-shadow: 4px 4px 4px #000000;
 }
+.droneDel > .packageNum {
+	height: 30%;
+
+}
+.droneDel > form {
+	height: 70%;
+}
+.droneDel > form > label {
+	width: 90%;
+	margin-left: 5%;
+	border-bottom: 2px solid #ffffff;
+/*	margin-top: 3%;*/
+	text-align: right;
+	color: #c81925;
+	font-size: 1.3em;
+
+}
 .packageNum > form {
     margin-top: 2%;
 }
@@ -608,8 +626,9 @@ input[type='text'][name='droneNumber'] {
     border: none;
     width: 50%;
     margin-left: 11%;
+	float: left;
     color: #ffffff;
-    padding: 8px 0px 0px 10px;
+/*    padding: 8px 0px 0px 10px;*/
     text-align: center;
     font-size: 1.3em;
 }

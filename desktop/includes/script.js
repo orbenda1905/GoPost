@@ -1,4 +1,6 @@
 var pickupBoxes;
+var avlbleDrones;
+var droneBoxes;
 
 $(document).ready(function() {
 	showCurrentDate();
@@ -13,13 +15,49 @@ $(document).ready(function() {
 function setBricksLinks() {
 //	setCourierLink();
 	setPickupLink();
-//	setDroneLink();
+	setDroneLink();
 }
 
 function setDroneLink() {
 	$(".drone").on("click", function() {
+		var main = $("main");
+		var waitingSign = $("<div class='cssload-container'>" +
+									 "<div class='cssload-whirlpool'></div></div>");
+		var fade = $("<div id='fade'></div>");
+		fade.append(waitingSign);
+		main.fadeIn(200).append(fade);
+		$.getJSON("data/addresses.json", function(data) {
+			fillDronePage(data);
+		});
+	});
+}
 
-	})
+function fillDronePage(json) {
+	var main = $("main");
+	var fade = $("#fade");
+	$.get("ajax/dronePage.html", function(data) {
+		fade.siblings().remove();
+//		main.removeAttr("class");
+		main.attr("class", "mainD");
+		main.append(data);
+		var boxNav = $(".boxNav");
+		boxNav.children().first().children().first().children().first().attr("class", "active");
+		var droneSide = $(".droneSide");
+		$.each(json.availableDrones, function(k, v) {
+			fillDroneSide(droneSide, v.droneNum);
+		});
+	});
+	$("#fade").fadeOut(200, function() {
+		$(this).remove();
+	});
+}
+
+function fillDroneSide(htmlTag, droneNum) {
+	var flyDrone = $("<section class='flyDrone'></div>");
+	var circle = $("<div class='circle'></div>");
+	circle.append("<p>" + droneNum + "</p>");
+	flyDrone.append(circle);
+	htmlTag.append(flyDrone);
 }
 
 function setPickupLink() {
