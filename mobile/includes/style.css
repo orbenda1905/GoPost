@@ -204,6 +204,7 @@ label > p {
 	font-size: 18px;
 	line-height: 180%;
     border-radius: 3px;
+    cursor: pointer;
 }
 .confirm {
     background: #ffffff;
@@ -460,6 +461,7 @@ li > a {
     border-radius: 5px;
     border: none;
     box-shadow: 2px 2px 8px #000000;
+    cursor: pointer;
 }
 #light > .scan {
     font-size: 1.2em;
@@ -517,14 +519,14 @@ li > a {
 	height: 100%;
 }
 .electricInput {
-    width: 80%;
+    width: 81.7%;
     float: right;
     margin-right: 8%;
 	border: none;
 	direction: rtl;
 	font-size: 1.0em;
 	color: #c81925;
-    padding: 15px 5px 12px 15px;
+    padding: 10px 5px 12px 10px;
 }
 
 .electricForm > .sendButton {
