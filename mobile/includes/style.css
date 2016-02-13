@@ -690,15 +690,15 @@ input[type='text'][name='ccv'] {
         width: 17%;
     }
     .info {
-        width: 50%;
+        width: 45%;
     }
-}
-.sendPay {
+    .sendPay {
         margin-top: 15%;
         display: block;
-}
-.billKind {
-       margin-right: 35%;
+    }
+    .billKind {
+        margin-right: 35%;
+    }
 }
 
 @media (max-width: 474px) {
@@ -760,20 +760,3 @@ input[type='text'][name='ccv'] {
         font-size: 1.0em;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
