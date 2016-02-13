@@ -79,9 +79,9 @@ header > section {
 	margin-top: 2%;
 }
 .welcome {
-	width: 60%;
+	width: 45%;
 	font-size: 0.9em;
-	margin-left: 45%;
+	margin-left: 53%;
 }
 
 #logo {
@@ -739,6 +739,21 @@ input[type='text'][name='ccv'] {
 	}
     .tiltLine {
         width: 20%;
+    }
+    .electricForm > label > span {
+        width: 35%;
+    }
+    .field {
+        width: 55%;
+    }
+    .sendPay {
+       margin-top: 4%;
+    }
+    .lineE {
+        margin-top: 3%;
+    }
+    .billKind {
+       margin-right: 43%;
     }
 }
 
