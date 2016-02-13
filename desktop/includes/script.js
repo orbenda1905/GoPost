@@ -4,40 +4,87 @@ var droneBoxes;
 
 $(document).ready(function() {
 	showCurrentDate();
-	markCurrentPage(1);
-	$.getJSON("data/addresses.json", function(data) {
-		fillDashboard(data);
-	});
-	defineMotions();//define the click motions on each brick on the main menu
-	setBricksLinks();
+	setSideNavLinks();
+	loadDashboard();
+
 })
 
+function loadDashboard() {
+	markCurrentPage(1);
+	$.get("ajax/newDashboard", function(data) {
+		$("#wrapper").append(data);
+		$.getJSON("data/addresses.json", function(data) {
+			fillDashboard(data);
+			defineMotions();//define the click motions on each brick on the main menu
+			setBricksLinks();
+		});
+	});
+}
+
+function setSideNavLinks() {
+	var sideNav = $(".sideNav");
+	var dashBoard = sideNav.children().first().next().children().first();
+	var selfPickup = sideNav.children().first().next().next().children().first();
+	var drone = sideNav.children().first().next().next().next().children().first();
+
+	drone.on("click", function(e) {
+		e.preventDefault();
+		var main = $("main");
+		if (main.attr("class") === "mainD") {
+			return;
+		}
+		createDronePage();
+	});
+
+	selfPickup.on("click", function(e) {
+		e.preventDefault();
+		var main = $("main");
+		if (main.attr("class") === "mainP") {
+			return;
+		}
+		createPickupPage();
+	});
+
+	dashBoard.on("click", function(e) {
+		e.preventDefault();
+		var main = $("main");
+		if (!main.attr("class")) {//means we are in the current page
+			return;
+		}
+		main.remove();
+		loadDashboard();
+	});
+}
+
 function setBricksLinks() {
-//	setCourierLink();
 	setPickupLink();
 	setDroneLink();
 }
 
 function setDroneLink() {
 	$(".drone").on("click", function() {
-		var main = $("main");
-		var waitingSign = $("<div class='cssload-container'>" +
-									 "<div class='cssload-whirlpool'></div></div>");
-		var fade = $("<div id='fade'></div>");
-		fade.append(waitingSign);
-		main.fadeIn(200).append(fade);
-		$.getJSON("data/addresses.json", function(data) {
-			fillDronePage(data);
-		});
+		createDronePage();
+	});
+}
+
+function createDronePage() {
+	var main = $("main");
+	var waitingSign = $("<div class='cssload-container'>" +
+								 "<div class='cssload-whirlpool'></div></div>");
+	var fade = $("<div id='fade'></div>");
+	fade.append(waitingSign);
+	main.fadeIn(200).append(fade);
+	$.getJSON("data/addresses.json", function(data) {
+		fillDronePage(data);
 	});
 }
 
 function fillDronePage(json) {
+	markCurrentPage(3);
 	var main = $("main");
 	var fade = $("#fade");
 	$.get("ajax/dronePage.html", function(data) {
 		fade.siblings().remove();
-//		main.removeAttr("class");
 		main.attr("class", "mainD");
 		main.append(data);
 		var boxNav = $(".boxNav");
@@ -46,10 +93,18 @@ function fillDronePage(json) {
 		$.each(json.availableDrones, function(k, v) {
 			fillDroneSide(droneSide, v.droneNum);
 		});
+		var packageSide = $(".packageSide");
+		$.each(json.droneBoxes, function() {
+			fillDronePackageSide(packageSide, v.droneBoxes);
+		});
 	});
 	$("#fade").fadeOut(200, function() {
 		$(this).remove();
 	});
+}
+
+function fillDronePackageSide(htmlTag, droneBox) {
+
 }
 
 function fillDroneSide(htmlTag, droneNum) {
@@ -62,32 +117,34 @@ function fillDroneSide(htmlTag, droneNum) {
 
 function setPickupLink() {
 	$(".pickup").on("click", function() {
-		var main = $("main");
-		var waitingSign = $("<div class='cssload-container'>" +
-									 "<div class='cssload-whirlpool'></div></div>");
-		var fade = $("<div id='fade'></div>");
-		fade.append(waitingSign);
-		main.fadeIn(200).append(fade);
-		$.get("ajax/newPIckup.html", function(data) {
-			fade.siblings().remove();
-			main.attr("class", "mainP");
-			main.append(data);
-			setBoxNavTabs(0, 1, 2);
-			markCurrentPage(2);
-			loadPickupBoxes();
-			setBoxNavLinks();
-			setSearchOption();
-			});
+		createPickupPage()
+	});
+}
+
+function createPickupPage() {
+	var main = $("main");
+	var waitingSign = $("<div class='cssload-container'>" +
+								"<div class='cssload-whirlpool'></div></div>");
+	var fade = $("<div id='fade'></div>");
+	fade.append(waitingSign);
+	main.fadeIn(200).append(fade);
+	$.get("ajax/newPIckup.html", function(data) {
+		fade.siblings().remove();
+		main.attr("class", "mainP");
+		main.append(data);
+		setBoxNavTabs(0, 1, 2);
+		markCurrentPage(2);
+		loadPickupBoxes();
+		setBoxNavLinks();
+		setSearchOption();
 	});
 }
 
 function setSearchOption() {
 	var form = $(".boxNav").children().first().next();
-//	console.log(form.children().first().val());
 	var input = form.children().first();
 	form.bind("submit", {input: input}, function(e) {
 		e.preventDefault();
-//		var boxId = this.children().first().val();
 		var value = input.val();
 		checkBoxId(value);
 		input.val("");
@@ -110,15 +167,18 @@ function checkBoxId(boxId) {
 
 function setBoxNavLinks() {
 	var tab = document.getElementsByClassName("boxNav")[0].getElementsByTagName("ul")[0].children;
-	tab[0].onclick = function() {
+	tab[0].onclick = function(e) {
+		e.preventDefault();
 		displayPickupBoxes("all");
 		setBoxNavTabs(0, 1, 2);
 	};
-	tab[1].onclick = function() {
+	tab[1].onclick = function(e) {
+		e.preventDefault();
 		displayPickupBoxes("loaded");
 		setBoxNavTabs(1, 0, 2);
 	};
-	tab[2].onclick = function() {
+	tab[2].onclick = function(e) {
+		e.preventDefault();
 		displayPickupBoxes("waiting");
 		setBoxNavTabs(2, 0, 1);
 	};
@@ -189,6 +249,7 @@ function appendBox(objVal, htmlTag, boxNum) {
 	packageDel.append(form);
 	box.append(packageDel);
 	htmlTag.append(box);
+	box.css("cursor", "pointer");
 	if (status === "ממתינה") {
 		boxStatusChanging(box.first(), objVal.deliveryId);
 	}
@@ -205,7 +266,6 @@ function boxStatusChanging(box, boxId) {
 		var label = $("<label class='status'></label>");
 		label.append("סטטוס");
 		label.append("<input type='text' name='updateNumber' value='טעון' readonly>");
-//		label.append("<div class='alertLine'></div>");
 		section.append(label);
 		form.append(section);
 		light.append(form);
@@ -216,7 +276,6 @@ function boxStatusChanging(box, boxId) {
 		$(".cancel").on("click", function(e) {
 			e.preventDefault();//default of "button" is submit!!! (cost us a lot of time)
 			$("#fade").fadeOut(200, function() {
-//				light.remove();
 				$(this).remove();
 			});
 		});
@@ -319,7 +378,6 @@ function fillDashboard(data) {
 		pickup[5].children[1].innerHTML = v.pickup.loaded;
 
 		//boxes filling
-//		console.log(boxes);
 		boxes[3].children[1].innerHTML = v.boxes.waiting;
 		boxes[4].children[1].innerHTML = v.boxes.total;
 	});
