@@ -28,6 +28,10 @@ header {
 	position: relative;
 }
 
+h1 {
+    text-align: center;
+}
+
 .mobileMenu {
     float: right;
     position: relative;
@@ -107,6 +111,12 @@ main {
 	padding-bottom: 5%;
 }
 
+.load {
+    background: url(../images/loadingPage.png) no-repeat center;
+    width: 100%;
+    height: 620px;
+}
+
 .pickUpForm {
 	width: 100%;
 	height: 100%;
@@ -137,6 +147,16 @@ label > p {
 	font-size: 1.0em;
 	color: #c81925;
 }
+
+.barcode {
+    width: 100%;
+}
+
+.barcode > p {
+    text-align: center;
+    margin-top: 3%;
+}
+
 .tripleInput {
 	width: 33%;
 	float: right;

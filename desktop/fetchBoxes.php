@@ -2,7 +2,7 @@
 	include ("db.php");
 
 
-	$toDo = $_REQUEST['action'];
+	$toDo = $_REQUEST['toDo'];
 
 	if ($toDo == "pickup") {
 		$query = "SELECT * FROM tbl_DeliveryBoxes_207 WHERE Delivery_option = 'איסוף עצמי'";
