@@ -205,6 +205,22 @@ label > p {
 	line-height: 180%;
     border-radius: 3px;
 }
+.confirm {
+    background: #ffffff;
+	border: none;
+	float: right;
+	color: #ca151d;
+	font-weight: bold;
+	width: 30%;
+	font-size: 18px;
+	line-height: 180%;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 3%;
+    margin-right: 35%;
+    box-shadow: 2px 2px 8px #000000;
+}
+
 .paymentElc {
     background: #ffffff;
     width: 32%;
