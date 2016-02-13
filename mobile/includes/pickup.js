@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 function displayInfo(data) {
 	var lightBox = $("<div id='light'></div>");
-	lightBox.append("<h2>החבילה תיטען למכונה בסניף המבוקש <br> תודה ויום טוב !</h2>");
+	lightBox.append("<h2>החבילה תיטען למכונה בסניף המבוקש <br><br> תודה ויום טוב !</h2>");
 	var paragraph = $("<p></p>");
 	lightBox.append(paragraph);
 	lightBox.append("<br>");

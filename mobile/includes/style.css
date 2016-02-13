@@ -584,7 +584,7 @@ li > a {
 */
 .billKind {
     background: url(../images/paymentKind.png) no-repeat ;
-    width: 45%;
+    width: 50%;
     height: 35px;
     float: right;
     margin-right: 40%;
@@ -704,6 +704,13 @@ input[type='text'][name='ccv'] {
         width: 50%;
     }
 }
+.sendPay {
+        margin-top: 15%;
+        display: block;
+}
+.billKind {
+       margin-right: 35%;
+}
 
 @media (max-width: 474px) {
 	body {
@@ -749,13 +756,15 @@ input[type='text'][name='ccv'] {
         width: 55%;
     }
     .sendPay {
-       margin-top: 4%;
+        margin-top: 15%;
+        display: block;
     }
     .lineE {
         margin-top: 3%;
     }
     .billKind {
-       margin-right: 43%;
+        margin-right: 38%;
+        width: 55%;
     }
 }
 
