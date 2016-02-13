@@ -16,6 +16,12 @@ function setBricksLinks() {
 //	setDroneLink();
 }
 
+function setDroneLink() {
+	$(".drone").on("click", function() {
+
+	})
+}
+
 function setPickupLink() {
 	$(".pickup").on("click", function() {
 		var main = $("main");
@@ -30,7 +36,7 @@ function setPickupLink() {
 			main.append(data);
 			setBoxNavTabs(0, 1, 2);
 			markCurrentPage(2);
-			loadPickupBoxes("all");
+			loadPickupBoxes();
 			setBoxNavLinks();
 			setSearchOption();
 			});
@@ -86,16 +92,17 @@ function setBoxNavTabs(pickedTab, notPicked1, notPicked2) {
 		tabs.children[0].children[0].removeAttribute("class");
 		tabs.children[1].children[0].removeAttribute("class");
 		tabs.children[2].children[0].removeAttribute("class");
+		return;
 	}
 	tabs.children[pickedTab].children[0].setAttribute("class", "active");
 	tabs.children[notPicked1].children[0].removeAttribute("class");
 	tabs.children[notPicked2].children[0].removeAttribute("class");
 }
 
-function loadPickupBoxes(action) {
+function loadPickupBoxes() {
 	$.get("fetchBoxes.php", {toDo: "pickup"}, function(data) {
 		pickupBoxes = $.parseJSON(data);
-		displayPickupBoxes(action);
+		displayPickupBoxes("all");
 	});
 }
 
@@ -122,7 +129,7 @@ function displayPickupBoxes(action) {
 		}
 	});
 	$("#fade").fadeOut(200, function() {
-		$("#fade").remove();
+		$(this).remove();
 	});
 }
 
@@ -138,7 +145,7 @@ function appendBox(objVal, htmlTag, boxNum) {
 	packageNum.append("<p>" + objVal.deliveryId + "</p>");
 	var form = $("<form action='#'></form>");
 	var label = $("<label>סטטוס</label>");
-	label.append("<input type='text' name='packageNumber' value='" + status + "'readonly>");
+	label.append("<input type='text' name='packageNumber' value='" + status + "' readonly>");
 	form.append(label);
 	packageDel.append(packageNum);
 	packageDel.append(form);
@@ -154,28 +161,29 @@ function boxStatusChanging(box, boxId) {
 		var light = $("<div id='light'></div>");
 		var packageNum = $("<section class='packageNum'></section>");
 		packageNum.append("<p>מספר חבילה - " + boxId + "</p>");
+		light.append(packageNum);
 		var form = $("<form class='lightForm' action='#'></form>");
+		var section = $("<section></section>");
 		var label = $("<label class='status'></label>");
 		label.append("סטטוס");
 		label.append("<input type='text' name='updateNumber' value='טעון' readonly>");
-		label.append("<div class='alertLine'></div>");
-		form.append(label);
-		packageNum.append(form);
-		light.append(packageNum);
+//		label.append("<div class='alertLine'></div>");
+		section.append(label);
+		form.append(section);
+		light.append(form);
 		form.append("<input type='submit' name='confirm' value='אשר'>");
 		form.append("<button class='cancel'>בטל</button>");
 		$(".mainP").prepend("<div id='fade'></div>");
-		$(".mainP").prepend(light);
-		$(".cancel").on("click", function() {
+		$("#fade").append(light);
+		$(".cancel").on("click", function(e) {
+			e.preventDefault();//default of "button" is submit!!! (cost us a lot of time)
 			$("#fade").fadeOut(200, function() {
-				light.remove();
+//				light.remove();
 				$(this).remove();
-				console.log("canceled");
 			});
 		});
 		form.bind("submit", {boxId: boxId, box: box}, function(e) {
 			e.preventDefault();
-			console.log("submited");
 			$("#light").remove();
 			$("#fade").append("<div class='cssload-container'>" +
 							  "<div class='cssload-whirlpool'></div></div>");

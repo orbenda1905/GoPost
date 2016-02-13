@@ -50,20 +50,24 @@
 		   		</ul>
 		   </nav>
 		   <main class="mainP">
-               <div id="light">
-                    <section class="packageNum">
-                    <p>מספר חבילה - RR233342342IL</p>
-                    <form class="lightForm" action="#">
-                        <label class="status">סטטוס טעון
-                            <input type="text" name="updateNumber" readonly></input>
-                            <div class="alertLine"></div>
-                        </label>
-                    </form>
-                    </section>
-                    <input type="submit" name="confirm" value="אשר">
-                    <input type="submit" name="cancel" value="בטל">
+
+                <div id="fade">
+                	<div id="light">
+						<section class="packageNum">
+							<p>מספר חבילה - RR233342342IL</p>
+						</section>
+						<form class="lightForm" action="#">
+							<section>
+								<label class="status">סטטוס
+									<input type="text" name="updateNumber" value="טעון" readonly>
+		<!--							<div class="alertLine"></div>-->
+								</label>
+							</section>
+							<input type="submit" name="confirm" value="אשר">
+							<button class='cancel'>בטל</button>
+						</form>
+                	</div>
                 </div>
-                <div id="fade"></div>
                  <section class="boxNav">
                       <ul>
                           <li><a class="active" href="#">כללי</a></li>
