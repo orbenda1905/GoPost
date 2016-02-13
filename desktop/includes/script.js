@@ -101,6 +101,7 @@ function createDronePage() {
 	fade.append(waitingSign);
 	main.fadeIn(200).append(fade);
 	setHeaderDrone("רחפן");
+	setBreadCrumbs("רחפן", "כללי");
 	$.getJSON("data/addresses.json", function(data) {
 		fillDronePage(data);
 	});
