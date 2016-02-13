@@ -47,11 +47,11 @@
 				    <div class="billKind"></div>
 				    <label><span>מספר כרטיס</span>
 				        <input type="text" class="field" name="cardNumber" required>
+				        <input type="text" class="field" name="cardNumber" required pattern="[0-9]{13,16}" title="הכנס בבקשה מספר אשראי בין 13 ל-16 ספרות (0-9)">
 				    </label>
 				    <label><span>תוקף</span>
-				        <input type="text" name="ExpriyDate">
-				        <input type="text" name="ccv">
-				        <p>CCV</p>
+				        <input type="date" name="ExpriyDate" required>
+				        <input type="text" name="ccv" required placeholder="ccv">
 				    </label>
 				    <div class="lineE"></div>
 				    <div class="clear"></div>
