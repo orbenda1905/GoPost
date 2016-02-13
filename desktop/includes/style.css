@@ -628,12 +628,11 @@ input[type='text'][name='droneNumber'] {
     margin-top: 4%;
     background: #d7d7d7;
     border: none;
-    width: 51%;
-    margin-left: 7%;
+    width: 57%;
 	float: left;
     color: #ffffff;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 input[type='text'][name='droneNumber']:focus {
     outline: none;
