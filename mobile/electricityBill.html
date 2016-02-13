@@ -5,13 +5,13 @@
 		<title>Go Post - Electricity Bill </title>
 		<link rel="stylesheet" href="includes/style.css">
 		<script src="includes/jquery.min.js"></script>
-		<script src="includes/pickupScreen.js"></script>
+		<script src="includes/electricityBill.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
 		<div id="wrapper">
 			<header>
-				<a id="logo" href="#"></a>
+				<a id="logo" href="index.html"></a>
 				<section>
 					<p class="welcome">שלום שני, <a href="#">התנתק/י</a></p>
 					<div class="mobileMenu">
@@ -35,17 +35,24 @@
 			</header>
 			<main>
 				<form class="electricForm" action="#">
-					<label class="label">שם פרטי</label>
-				    <input type="text" class="field" name="fname">
-				    <label class="label">שם משפחה</label>
-				    <input type="text" class="field" name="lname">
-				    <label class="label">ת.ז</label>
-				    <input type="text" class="field" name="id">
+					<label><span>שם פרטי</span>
+				        <input type="text" class="field" name="fname">
+				    </label>
+				    <label><span>שם משפחה</span>
+				        <input type="text" class="field" name="lname">
+				    </label>
+				    <label><span>ת.ז</span>
+				        <input type="text" class="field" name="id">
+				    </label>
 				    <div class="billKind"></div>
-				    <label class="label">מספר כרטיס</label>
-				    <input type="text" class="field" name="cardNumber">
-				    <label class="label">תוקף</label>
-				    <input type="text" class="field" name="ExpriyDate"><p>CCV</p>
+				    <label><span>מספר כרטיס</span>
+				        <input type="text" class="field" name="cardNumber">
+				    </label>
+				    <label><span>תוקף</span>
+				        <input type="text" name="ExpriyDate">
+				        <input type="text" name="ccv">
+				        <p>CCV</p>
+				    </label>
 				    <div class="lineE"></div>
 				    <div class="clear"></div>
 				    <div class="billSum">
