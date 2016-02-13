@@ -12,6 +12,7 @@ $(document).ready(function() {
 function loadDashboard() {
 	markCurrentPage(1);
 	setHeader("Dashboard");
+	$(".breadcrumb").empty();
 	$.get("ajax/newDashboard", function(data) {
 		$("#wrapper").append(data);
 		$.getJSON("data/addresses.json", function(data) {
@@ -22,9 +23,18 @@ function loadDashboard() {
 	});
 }
 
-function setBreadCrumbs(head, tail, active) {
+function setBreadCrumbs(head, tail) {
 	var breadCrumb = $(".breadcrumb");
-	console.log(breadCrumb.children().first());
+	breadCrumb.empty();
+	var first = $("<li class='active'>" + head + "</li>");
+	var a = $("<a href='#'>" + tail + "</a>");
+	var last = $("<li></li>");
+	last.append(a);
+	a.on("click", function(e) {
+		e.preventDefault();
+	});
+	breadCrumb.append(first);
+	breadCrumb.append(last);
 }
 
 function setHeader(content) {
@@ -169,6 +179,7 @@ function createPickupPage() {
 	fade.append(waitingSign);
 	main.fadeIn(200).append(fade);
 	setHeader("איסוף עצמי");
+	setBreadCrumbs("איסוף עצמי", "כללי");
 	$.get("ajax/newPIckup.html", function(data) {
 		fade.siblings().remove();
 		main.attr("class", "mainP");
@@ -217,11 +228,13 @@ function setBoxNavLinks() {
 		e.preventDefault();
 		displayPickupBoxes("loaded");
 		setBoxNavTabs(1, 0, 2);
+		setBreadCrumbs("איסוף עצמי", "טעונות במכונה");
 	};
 	tab[2].onclick = function(e) {
 		e.preventDefault();
 		displayPickupBoxes("waiting");
 		setBoxNavTabs(2, 0, 1);
+		setBreadCrumbs("איסוף עצמי", "ממתינות לטעינה");
 	};
 }
 
