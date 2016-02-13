@@ -38,13 +38,27 @@ function setBreadCrumbs(head, tail) {
 }
 
 function setHeader(content) {
-	$("h1").removeAttr("class");
-	$("h1").html(content);
+	var h1 = $("h1");
+	h1.removeAttr("class");
+	h1.html(content);
+	if (content === "איסוף עצמי") {
+		h1.next().next().attr("class", "lineN");
+	}
+	if (content === "Dashboard") {
+		h1.next().next().attr("class", "line");
+	}
+	var line = $(".titleLine");
+	if (line) {
+		line.attr("class", "line");
+	}
 }
 
 function setHeaderDrone(content) {
-	$("h1").attr("class", "title");
-	$("h1").html(content);
+	var h1 = $("h1");
+	h1.attr("class", "title");
+	h1.html(content);
+	h1.next().next().attr("class", "titleLine")
+//	$(".line").attr("class", "titleLine");
 }
 
 function setSideNavLinks() {
