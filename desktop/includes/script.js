@@ -11,6 +11,7 @@ $(document).ready(function() {
 
 function loadDashboard() {
 	markCurrentPage(1);
+	setHeader("Dashboard");
 	$.get("ajax/newDashboard", function(data) {
 		$("#wrapper").append(data);
 		$.getJSON("data/addresses.json", function(data) {
@@ -19,6 +20,21 @@ function loadDashboard() {
 			setBricksLinks();
 		});
 	});
+}
+
+function setBreadCrumbs(head, tail, active) {
+	var breadCrumb = $(".breadcrumb");
+	console.log(breadCrumb.children().first());
+}
+
+function setHeader(content) {
+	$("h1").removeAttr("class");
+	$("h1").html(content);
+}
+
+function setHeaderDrone(content) {
+	$("h1").attr("class", "title");
+	$("h1").html(content);
 }
 
 function setSideNavLinks() {
@@ -74,6 +90,7 @@ function createDronePage() {
 	var fade = $("<div id='fade'></div>");
 	fade.append(waitingSign);
 	main.fadeIn(200).append(fade);
+	setHeaderDrone("רחפן");
 	$.getJSON("data/addresses.json", function(data) {
 		fillDronePage(data);
 	});
@@ -94,8 +111,10 @@ function fillDronePage(json) {
 			fillDroneSide(droneSide, v.droneNum);
 		});
 		var packageSide = $(".packageSide");
-		$.each(json.droneBoxes, function() {
-			fillDronePackageSide(packageSide, v.droneBoxes);
+		$.each(json.droneBoxes, function(k, v) {
+			if (v.status !== "ממתינה") {
+				fillDronePackageSide(packageSide, v);
+			}
 		});
 	});
 	$("#fade").fadeOut(200, function() {
@@ -104,7 +123,28 @@ function fillDronePage(json) {
 }
 
 function fillDronePackageSide(htmlTag, droneBox) {
-
+	var id = droneBox.id;
+	var status = droneBox.status;
+	var dest = droneBox.to;
+	var time = droneBox.time;
+	var boxNum = $(".droneBox").length;
+	var droneBox = $("<section class='droneBox'></section>");
+	var circle = $("<div class='circle'><p>" + (boxNum + 1) + "</p></div>");
+	droneBox.append(circle);
+	var droneDel = $("<section class='droneDel'></section>");
+	droneDel.append("<div class='packageNum'><p>" + id + "</p></div>");
+	var form = $("<form action='#'></form>");
+	var stsLbl = $("<label>סטטוס" + "<input type='text' readonly name='droneNumber' value='" + status + "'></label>");
+	form.append(stsLbl);
+	form.append("<div class='clear'></div>");
+	var deslbl = $("<label>יעד" + "<input type='text' readonly name='droneNumber' value='" + dest + "'></label>");
+	form.append(deslbl);
+	form.append("<div class='clear'></div>");
+	var hrLbl = $("<label>שעת שליחה" + "<input type='text' readonly name='droneNumber' value='" + time + "'></label>");
+	form.append(hrLbl);
+	droneDel.append(form);
+	droneBox.append(droneDel);
+	htmlTag.append(droneBox);
 }
 
 function fillDroneSide(htmlTag, droneNum) {
@@ -128,6 +168,7 @@ function createPickupPage() {
 	var fade = $("<div id='fade'></div>");
 	fade.append(waitingSign);
 	main.fadeIn(200).append(fade);
+	setHeader("איסוף עצמי");
 	$.get("ajax/newPIckup.html", function(data) {
 		fade.siblings().remove();
 		main.attr("class", "mainP");

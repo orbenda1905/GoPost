@@ -1,5 +1,9 @@
 
 $(document).ready(function() {
+	$('#menu').click(function(){
+        $('.responsiveMenu').toggleClass('expand');
+    });
+
     $(".electricForm").submit(function(e) {
 		e.preventDefault();
 		var billNum = $(".electricInput").val();

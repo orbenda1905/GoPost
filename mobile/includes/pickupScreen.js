@@ -27,12 +27,30 @@ $(document).ready(function() {
 		$('body').fadeIn(200).append("<div class='waitingSign'></div>");
 		$("body").append("<div id='fade'></div>");
 		$("#fade").show();
-		$.get("updateBox", {boxId: boxId, delivery: "selfPicking"}, function() {
+		$.get("updateBox.php", {boxId: boxId, delivery: "selfPicking"}, function() {
 			$('.waitingSign').fadeOut(200, function() {
 				$('.waitingSign').remove();
 				$("#fade").remove();
 			});
 			window.location.replace("index.html");
 		});
+		displayMessage();
 	});
 })
+
+function displayMessage() {
+	var lightBox = $("<div id='light'></div>");
+	lightBox.append("<h2>החבילה תיטען למכונה בסניף המבוקש <br><br> תודה ויום טוב !</h2>");
+	var paragraph = $("<p></p>");
+	lightBox.append(paragraph);
+	lightBox.append("<br>");
+	$("body").prepend("<div id='lightFade'></div>");
+	$("body").prepend(lightBox);
+	$("#lightFade").on("click", function() {
+		$("#light").remove();
+		$("#fade").remove();
+		window.location.replace("index.html");
+	});
+	$("#fade").show();
+	lightBox.show();
+}

@@ -690,7 +690,7 @@ input[type='text'][name='ccv'] {
         width: 17%;
     }
     .info {
-        width: 50%;
+        width: 45%;
     }
 }
 .sendPay {

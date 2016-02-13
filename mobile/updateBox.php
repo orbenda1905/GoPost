@@ -11,11 +11,11 @@
 		$query = "UPDATE tbl_DeliveryBoxes_207 SET Delivery_option = 'איסוף עצמי' WHERE deliveryId = '$boxId'";
 	}
 
-	if ($deliveryOption == "drone") {
+	if ($deliveryOption == "drone") {//not realy in use
 		$query = "UPDATE tbl_DeliveryBoxes_207 SET Delivery_option = 'רחפן' WHERE deliveryId = '$boxId'";
 	}
 
-	if ($deliveryOption == "deliveryGuy") {
+	if ($deliveryOption == "deliveryGuy") {//not realy in use
 		$query = "UPDATE tbl_DeliveryBoxes_207 SET Delivery_option = 'שליח' WHERE deliveryId = '$boxId'";
 	}
 
