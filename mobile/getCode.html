@@ -2,48 +2,28 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Go Post - Pay Electric </title>
-		<link rel="stylesheet" href="includes/style.css">
+		<title>Go Post - Barcode Scan </title>
+		<link rel="stylesheet" href="includes/style.css">           <link rel="stylesheet" href="includes/base.css">
 		<script src="includes/jquery.min.js"></script>
-		<script src="includes/pickupScreen.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	<body>
-<video id="video" width="640" height="480" autoplay></video>
-<button id="snap">Snap Photo</button>
-<canvas id="canvas" width="640" height="480"></canvas>
-
-    <script>
-// Put event listeners into place
-window.addEventListener("DOMContentLoaded", function() {
-	// Grab elements, create settings, etc.
-	var canvas = document.getElementById("canvas"),
-		context = canvas.getContext("2d"),
-		video = document.getElementById("video"),
-		videoObj = { "video": true },
-		errBack = function(error) {
-			console.log("Video capture error: ", error.code);
-		};
-
-	// Put video listeners into place
-	if(navigator.getUserMedia) { // Standard
-		navigator.getUserMedia(videoObj, function(stream) {
-			video.src = stream;
-			video.play();
-		}, errBack);
-	} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
-		navigator.webkitGetUserMedia(videoObj, function(stream){
-			video.src = window.webkitURL.createObjectURL(stream);
-			video.play();
-		}, errBack);
-	}
-	else if(navigator.mozGetUserMedia) { // Firefox-prefixed
-		navigator.mozGetUserMedia(videoObj, function(stream){
-			video.src = window.URL.createObjectURL(stream);
-			video.play();
-		}, errBack);
-	}
-}, false);
-    </script>
+    </head>
+    <body>
+ <div id="wrapper">
+    <h1>סורק ברקוד</h1>
+        <section class="main-content">
+        <p>
+אנא סרוק את הברקוד המופיע על הדף או העלה תמונה ממכשירך
+       <br>
+       <br>
+        <input type="file" id="take-picture" accept="image/*">
+        </p>
+        <h2>Preview:</h2>
+        <p>
+        <img src="" alt="" id="show-picture">
+        </p>
+        <p id="error"></p>
+            </section>
+        </div>
+        <script src="includes/base.js"></script>
 	</body>
 </html>

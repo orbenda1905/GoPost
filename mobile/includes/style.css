@@ -28,6 +28,10 @@ header {
 	position: relative;
 }
 
+h1 {
+    text-align: center;
+}
+
 .mobileMenu {
     float: right;
     position: relative;
@@ -143,6 +147,16 @@ label > p {
 	font-size: 1.0em;
 	color: #c81925;
 }
+
+.barcode {
+    width: 100%;
+}
+
+.barcode > p {
+    text-align: center;
+    margin-top: 3%;
+}
+
 .tripleInput {
 	width: 33%;
 	float: right;
