@@ -36,16 +36,17 @@
 			<main>
 				<form class="electricForm" action="#">
 					<label><span>שם פרטי</span>
-				        <input type="text" class="field" name="fname">
+				        <input type="text" class="field" name="fname"  required>
 				    </label>
 				    <label><span>שם משפחה</span>
-				        <input type="text" class="field" name="lname">
+				        <input type="text" class="field" name="lname" required>
 				    </label>
 				    <label><span>ת.ז</span>
-				        <input type="text" class="field" name="id">
+				        <input type="text" class="field" name="id" required>
 				    </label>
 				    <div class="billKind"></div>
 				    <label><span>מספר כרטיס</span>
+				        <input type="text" class="field" name="cardNumber" required>
 				        <input type="text" class="field" name="cardNumber" required pattern="[0-9]{13,16}" title="הכנס בבקשה מספר אשראי בין 13 ל-16 ספרות (0-9)">
 				    </label>
 				    <label><span>תוקף</span>

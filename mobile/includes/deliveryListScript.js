@@ -36,15 +36,15 @@ $(document).ready(function() {
 				$("#fade").remove();
 			});
 			var json = $.parseJSON(data);
-			console.log(json);
 			if (json.exist === "no") {
 //				notExist(boxId);
 				var fade = $("<div id='lightFade'></div>");
 				var lightBox = $("<div id='light'></div>");
-				lightBox.append("<p>החבילה המבוקשה אינה קיימת במאגר</p><br><p>אנא בדוק שהקלדת את הקוד במדויק</p>");
+				lightBox.append("<h2>" + "שגיאה!!" + "</h2>");
+				lightBox.append("<p>החבילה המבוקשה אינה קיימת במאגר</p><p>אנא בדוק שהקלדת את הקוד במדויק</p>");
 				fade.on("click", function() {
-					lightBox.remove();
-					fade.remove();
+					$("#lightFade").remove();
+					$("#light").remove();
 				});
 				$("body").append(fade);
 				$("body").append(lightBox);
@@ -54,7 +54,19 @@ $(document).ready(function() {
 			}
 			var boxNumOnList = boxes[json.id]
 			if (boxNumOnList) {
-				alert("box exist");
+//				alert("box exist");
+				var fade = $("<div id='fade'></div>");
+				var light = $("<div id='light'></div>");
+				light.append("<h2>" + "שגיאה!!" + "</h2>");
+				light.append("<p>החבילה המבוקשה קיימת כבר במאגר בנוכחי</p>");
+				$("body").append(fade);
+				$("body").append(light);
+				fade.show();
+				light.show();
+				fade.on("click", function() {
+					fade.remove();
+					light.remove();
+				});
 				return;
 			}
 			localStorage.setItem(json.id, json.office);
@@ -110,13 +122,20 @@ function displayInfo(data) {
 	$("body").prepend("<div id='fade'></div>");
 	$("body").prepend(lightBox);
 	$(".scan").on("click", function() {
-		$("#light").remove();
-		$("#fade").remove();
+		clearLIghtBox();
 	});
 	$("#fade").on("click", function() {
-		$("#light").remove();
-		$("#fade").remove();
+		clearLIghtBox();
 	});
 	$("#fade").show();
 	lightBox.show();
+}
+
+function clearLIghtBox() {
+	$("#fade").fadeOut(100, function() {
+		$(this).remove();
+	});
+	$("#light").fadeOut(100, function() {
+		$(this).remove();
+	});
 }
