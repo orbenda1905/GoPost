@@ -185,6 +185,25 @@ label > p {
 	line-height: 180%;
     border-radius: 3px;
 }
+.paymentElc {
+    background: #ffffff;
+    width: 32%;
+    height: 48px;
+    float: left;
+    font-size: 1.2em;
+    margin-top: 3%;
+    border-radius: 5px;
+    border: none;
+    color: #ca151d;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px #000000;
+}
+.credit {
+    font-size: 0.3em;
+    color: #000000;
+    float: left;
+    margin-left: 16%;
+}
 
 .packageId {
 	float: right;
