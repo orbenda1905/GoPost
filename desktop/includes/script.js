@@ -28,95 +28,102 @@ function setPickupLink() {
 			fade.siblings().remove();
 			main.attr("class", "mainP");
 			main.append(data);
+			setBoxNavTabs(0, 1, 2);
 			markCurrentPage(2);
-			loadPickupBoxes();
+			loadPickupBoxes("all");
+			setBoxNavLinks();
+			setSearchOption();
 			});
 	});
 }
 
-function loadPickupBoxes() {
-	$.get("fetchBoxes.php", {action: "pickup"}, function(data) {
-		pickupBoxes = $.parseJSON(data);
-		displayAllPickupBoxes();
+function setSearchOption() {
+	var form = $(".boxNav").children().first().next();
+//	console.log(form.children().first().val());
+	var input = form.children().first();
+	form.bind("submit", {input: input}, function(e) {
+		e.preventDefault();
+//		var boxId = this.children().first().val();
+		var value = input.val();
+		checkBoxId(value);
+		input.val("");
 	});
 }
 
-function displayAllPickupBoxes() {
+function checkBoxId(boxId) {
+	var i = 1;
+	var check = 0;
+	var mainContent = $(".mainContent");
+	mainContent.empty()
+	$.each(pickupBoxes, function(k, v) {
+		if (v.deliveryId.search(boxId) > -1) {
+			appendBox(v, mainContent, i);
+			i++;
+		}
+	});
+	setBoxNavTabs(4);
+}
+
+function setBoxNavLinks() {
+	var tab = document.getElementsByClassName("boxNav")[0].getElementsByTagName("ul")[0].children;
+	tab[0].onclick = function() {
+		displayPickupBoxes("all");
+		setBoxNavTabs(0, 1, 2);
+	};
+	tab[1].onclick = function() {
+		displayPickupBoxes("loaded");
+		setBoxNavTabs(1, 0, 2);
+	};
+	tab[2].onclick = function() {
+		displayPickupBoxes("waiting");
+		setBoxNavTabs(2, 0, 1);
+	};
+}
+
+function setBoxNavTabs(pickedTab, notPicked1, notPicked2) {
+	var tabs = document.getElementsByClassName("boxNav")[0].getElementsByTagName("ul")[0];
+	if (pickedTab === 4) {
+		tabs.children[0].children[0].removeAttribute("class");
+		tabs.children[1].children[0].removeAttribute("class");
+		tabs.children[2].children[0].removeAttribute("class");
+	}
+	tabs.children[pickedTab].children[0].setAttribute("class", "active");
+	tabs.children[notPicked1].children[0].removeAttribute("class");
+	tabs.children[notPicked2].children[0].removeAttribute("class");
+}
+
+function loadPickupBoxes(action) {
+	$.get("fetchBoxes.php", {toDo: "pickup"}, function(data) {
+		pickupBoxes = $.parseJSON(data);
+		displayPickupBoxes(action);
+	});
+}
+
+function displayPickupBoxes(action) {
 	var mainContent = $(".mainContent");
 	mainContent.empty();
 	var i = 1;
 	$.each(pickupBoxes, function(k, v) {
+		if (action === "all") {
 			appendBox(v, mainContent, i);
 			i++;
+		}
+		else if (action === "loaded") {
+			if (v.Loaded) {
+				appendBox(v, mainContent, i);
+				i++;
+			}
+		}
+		else{
+			if (!v.Loaded) {
+				appendBox(v, mainContent, i);
+				i++;
+			}
+		}
 	});
 	$("#fade").fadeOut(200, function() {
 		$("#fade").remove();
 	});
-	boxStatusChanging();
-}
-
-function boxStatusChanging() {
-	var packageDel = document.getElementsByClassName("packageDel");
-//	console.log(packageDel);
-	var size = packageDel.length;
-	for (var i = 0; i < size; i++) {
-		var boxId = packageDel[i].getElementsByClassName("packageNum")[0].children[0].innerHTML;
-		console.log(packageDel[i].getElementsByTagName("label")[0].childNodes[0]);
-		return;
-		if (packageDel[i].getElementsByTagName("label")[0].childNodes[0] == "ממתינה") {
-			console.log("hello");
-			packageDel[i].onclick = function() {
-			var light = $("<div id='light'></div>");
-			var packageNum = $("<section class='packageNum'></section>");
-			packageNum.append("<p>מספר חבילה - " + boxId + "</p>");
-			var form = $("<form class='lightForm' action='#'></form>");
-			var label = $("<label class='status'></label>");
-			label.append("סטטוס");
-			label.append("<input type='text' name='updateNumber' value='טעון' readonly>");
-			label.append("<div class='alertLine'></div>");
-			form.append(label);
-			packageNum.append(form);
-			light.append(packageNum);
-			form.append("<input type='submit' name='confirm' value='אשר'>");
-			form.append("<button class='cancel'>בטל</button>");
-			$(".mainP").prepend("<div id='fade'></div>");
-			$(".mainP").prepend(light);
-			$(".lightForm").button(function() {
-				$("#light").remove();
-				$("#fade").remove();
-			});
-			$(".lightForm").submit(function(e) {
-				e.preventDefault();
-				$("#light").remove();
-				$("#fade").append("<div class='cssload-container'>" +
-									 "<div class='cssload-whirlpool'></div></div>");
-				$.get("updateStatus.php", {action: "pickup", boxId: boxId}, function(data) {
-//					console.log(pickupBoxes);
-					$.each(pickupBoxes, function(k, v) {
-//						console.log(v.deliveryId);
-						if (v.deliveryId === boxId) {
-							v.Loaded = 'טעון';
-//							console.log(v.Loaded);
-						}
-						displayAllPickupBoxes();
-					});
-				});
-			})
-		};
-		}
-	}
-//	return;
-////	var packageDel = $(".packageDel");
-//	$.each(packageDel, function(k, v) {
-//		var boxId = v.find("*");
-//			console.log(boxId);
-////		v.on("click", function() {
-////
-////			var light = $("<div id='light'></div>");
-////			var packageNum = $("<section class='packageNum'></section>");
-////
-////		});
-//	});
 }
 
 function appendBox(objVal, htmlTag, boxNum) {
@@ -130,13 +137,61 @@ function appendBox(objVal, htmlTag, boxNum) {
 	var packageNum = $("<div class='packageNum'></div>");
 	packageNum.append("<p>" + objVal.deliveryId + "</p>");
 	var form = $("<form action='#'></form>");
-	var label = $("<label></label>");
-	label.append(status + "<input type='text' name='packageNumber' readonly>");
+	var label = $("<label>סטטוס</label>");
+	label.append("<input type='text' name='packageNumber' value='" + status + "'readonly>");
 	form.append(label);
 	packageDel.append(packageNum);
 	packageDel.append(form);
 	box.append(packageDel);
 	htmlTag.append(box);
+	if (status === "ממתינה") {
+		boxStatusChanging(box.first(), objVal.deliveryId);
+	}
+}
+
+function boxStatusChanging(box, boxId) {
+	box.bind("click", {boxId: boxId, box: box}, function() {
+		var light = $("<div id='light'></div>");
+		var packageNum = $("<section class='packageNum'></section>");
+		packageNum.append("<p>מספר חבילה - " + boxId + "</p>");
+		var form = $("<form class='lightForm' action='#'></form>");
+		var label = $("<label class='status'></label>");
+		label.append("סטטוס");
+		label.append("<input type='text' name='updateNumber' value='טעון' readonly>");
+		label.append("<div class='alertLine'></div>");
+		form.append(label);
+		packageNum.append(form);
+		light.append(packageNum);
+		form.append("<input type='submit' name='confirm' value='אשר'>");
+		form.append("<button class='cancel'>בטל</button>");
+		$(".mainP").prepend("<div id='fade'></div>");
+		$(".mainP").prepend(light);
+		$(".cancel").on("click", function() {
+			$("#fade").fadeOut(200, function() {
+				light.remove();
+				$(this).remove();
+				console.log("canceled");
+			});
+		});
+		form.bind("submit", {boxId: boxId, box: box}, function(e) {
+			e.preventDefault();
+			console.log("submited");
+			$("#light").remove();
+			$("#fade").append("<div class='cssload-container'>" +
+							  "<div class='cssload-whirlpool'></div></div>");
+			$.get("updateStatus.php", {action: "pickup", boxId: boxId}, function() {
+				$.each(pickupBoxes, function(k, v) {
+					if (v.deliveryId === boxId) {
+						v.Loaded = 'טעונה';
+					}
+				});
+				box.first().children().first().next().children().first().next().children().first().children().first().attr("value", "טעונה");
+				$("#fade").fadeOut(200, function() {
+					$(this).remove();
+				});
+			});
+		});
+	});
 }
 
 function defineMotions() {

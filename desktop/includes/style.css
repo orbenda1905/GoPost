@@ -375,7 +375,10 @@ main > .miniWrapper > section > p {
 }
 .boxNav > ul > li {
     float: right;
-    width: 33%;
+    width: 33.33%;
+}
+.boxNav > ul > li :hover {
+	background: #e6e6e6;
 }
 .boxNav > ul > li a {
     display: block;
@@ -389,6 +392,10 @@ main > .miniWrapper > section > p {
 .boxNav > ul > li a.active {
     background: #e6e6e6;
 }
+.boxNav > form {
+	float: right;
+	width: 39%;
+}
 .lineN {
     width: 16.7%;
     background-color: #d6d6d6;
@@ -397,8 +404,8 @@ main > .miniWrapper > section > p {
     top: 80%;
     left: 62.8%;
 }
-input[type='text'][name='search'] {
-    width: 130px;
+input[type='search']{
+    width: 16%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 3px;
@@ -408,13 +415,14 @@ input[type='text'][name='search'] {
     -webkit-transition: width 0.4s;
     transition: width 0.4s;
     position: absolute;
-    top: 5.1%;
+    top: 5.3%;
     left: 13%;
     color: #c81925;
     font-weight: bold;
 }
-input[type=text]:focus {
+input[type=search]:focus {
     width: 25%;
+	outline: none;
 }
 .search {
     position: absolute;
@@ -422,11 +430,11 @@ input[type=text]:focus {
     left: 8.5%;
 }
 .send {
-   background: url(../images/pickup.png) #861c11;
-    width: 12.5%;
+   background: url(../images/pickup.png) #861c11 no-repeat;
+    width: 34%;
     height: 85px;
     border: none;
-    margin-top: 1%;
+    margin-top: 2.9%;
 }
 .box {
     position: relative;
@@ -434,7 +442,7 @@ input[type=text]:focus {
 	height: 120px;
     float: right;
     margin-right: 2%;
-    margin-top: 3%;
+    margin-top: 2%;
 	margin-bottom: 1%;
 }
 .packageDel {
