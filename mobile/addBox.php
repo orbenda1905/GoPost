@@ -17,13 +17,18 @@
 		$status = $row['Status'];
 		$office = $row['Office_branch'];
 		$status = $row['Status'];
+		$option = $row["Delivery_option"];
 		$answer = array("exist" => "yes",
 						"id" => $boxId,
 						"from" => $from,
 						"office" => $office,
-						"status" => $status);
+						"status" => $status,
+					    "option" => $option);
 		mysqli_free_result($result);
 	}
 	echo json_encode($answer);
 	mysqli_close($connection);
 ?>
+
+
+

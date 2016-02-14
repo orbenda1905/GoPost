@@ -37,11 +37,26 @@ $(document).ready(function() {
 			});
 			var json = $.parseJSON(data);
 			if (json.exist === "no") {
-//				notExist(boxId);
 				var fade = $("<div id='lightFade'></div>");
 				var lightBox = $("<div id='light'></div>");
 				lightBox.append("<h2>" + "שגיאה!!" + "</h2>");
 				lightBox.append("<p>החבילה המבוקשה אינה קיימת במאגר</p><p>אנא בדוק שהקלדת את הקוד במדויק</p>");
+				fade.on("click", function() {
+					$("#lightFade").remove();
+					$("#light").remove();
+				});
+				$("body").append(fade);
+				$("body").append(lightBox);
+				fade.show();
+				lightBox.show();
+				return;
+			}
+			if (json.option != null) {
+				var option = json.option;
+				var fade = $("<div id='lightFade'></div>");
+				var lightBox = $("<div id='light'></div>");
+				lightBox.append("<h2>" + "שגיאה!!" + "</h2>");
+				lightBox.append("<p>לחבילה המבוקשת כבר עודכן אמצעי איסוף</p><p>אמצעי האיסוף הוא - " + option + "</p>");
 				fade.on("click", function() {
 					$("#lightFade").remove();
 					$("#light").remove();
@@ -139,3 +154,27 @@ function clearLIghtBox() {
 		$(this).remove();
 	});
 }
+
+//if (mysqli_num_rows($result) === 0) {
+//		$answer =  array("exist" => "no");
+//	} else {
+//		$row = mysqli_fetch_assoc($result);
+//		if ($row['Delivery_option'] != null) {
+//			$answer = array("exist" => "already");
+//			$option = $raw['Delivery_option'];
+//			$answer = array("option" => $option);
+//		}
+//		else{
+//			$from = $row['From'];
+//			$status = $row['Status'];
+//			$office = $row['Office_branch'];
+////			$status = $row['Status'];
+//			$answer = array("exist" => "yes",
+//							"id" => $boxId,
+//							"from" => $from,
+//							"office" => $office,
+//							"status" => $status);
+//			mysqli_free_result($result);
+//		}
+//
+//	}
