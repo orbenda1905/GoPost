@@ -646,6 +646,103 @@ input[type='text'][name='ccv'] {
 
 /*=========Responsive Page============*/
 
+/*=================Tablet================*/
+@media (min-width: 590px) and (max-width: 1280px) {
+    #wrapper {
+        width: 100%;
+    }
+    nav {
+        padding-top: 10%;
+        height: 610px;
+        width: 100%;
+    }
+    header > section {
+		width: 25%;
+        float: right;
+	}
+    .delivery {
+        margin-left: 70%;
+        width: 40%;
+        float: left;
+    }
+    .information {
+       width: 40%;
+    }
+    .payment {
+        width: 40%;
+        margin-left: 70%;
+        float: left;
+    }
+    .lineOrder {
+        width: 40%;
+    }
+    .exchange {
+        width: 40%;
+        margin-top: -61.5%;
+        float: left;
+        margin-left: 18%;
+    }
+    .responsiveMenu {
+        width: 700%;
+    }
+    main {
+        height: 610px;
+    }
+    .info > p {
+        padding-top: 2%;
+    }
+    .sendButton{
+        margin-top: 2%;
+        float: left;
+    }
+    .electricForm > .sendButton {
+        margin-left: 9%;
+        width: 25%;
+    }
+    .credit {
+        margin-right: 38%;
+        float: right;
+    }
+    .lineE {
+       margin-top: -3%;
+    }
+    .electricForm {
+        width: 85%;
+        height: 85%;
+    }
+    .sendPay {
+        margin-right: 65%;
+        float: right;
+        margin-top: 5%;
+    }
+    .sum {
+        margin-top: 0%;
+    }
+    .bill {
+        margin-top: 0%;
+    }
+    .billKind {
+        width: 40%;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*================Mobile==============*/
 @media (min-width: 475px) and (max-width: 590px) {
 	#wrapper {
 		width: 100%;
