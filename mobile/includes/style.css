@@ -183,6 +183,12 @@ label > p {
     cursor: pointer;
 }
 
+.boxImage {
+	height: 148px;
+	width: 200px;
+	margin-right: 25%;
+}
+
 .greyLine {
 	width: 90%;
 	border: 1px solid #909090;

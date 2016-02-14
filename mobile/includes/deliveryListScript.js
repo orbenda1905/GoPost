@@ -116,7 +116,10 @@ function addBox(data) {
 }
 
 function displayInfo(data) {
-	var lightBox = $("<div id='light'></div>");
+	var lightBox = $("#light");
+	if (lightBox.length === 0){
+		lightBox = $("<div id='light'></div>");
+	}
 	lightBox.append("<h2>פרטי החבילה</h2>" + "<br>");
 	lightBox.append("<p>" + "דואר רשום מספר - " + data.id + "<br>" +
 				  				"השולח - " + data.from + "<br>" +
@@ -131,16 +134,34 @@ function displayInfo(data) {
 	lightBox.append("<br>");
 	lightBox.append("<button class = 'scan'>אשר</button>");
 	lightBox.append("<button class = 'camera'></button>");
-	$("body").prepend("<div id='fade'></div>");
+	if ($("#fade").length === 0) {
+		$("body").prepend("<div id='fade'></div>");
+	}
+
 	$("body").prepend(lightBox);
 	$(".scan").on("click", function() {
 		clearLIghtBox();
+	});
+	$(".camera").on("click",{data: data}, function() {
+		displayImage(data);
 	});
 	$("#fade").on("click", function() {
 		clearLIghtBox();
 	});
 	$("#fade").show();
 	lightBox.show();
+}
+
+function displayImage(data) {
+
+	$("#light").empty();
+	$("#light").empty();
+	$("#light").append("<img class='boxImage' title='box image' alt='box image' src='images/boxImage.png'>");
+	$("#light").append("<button class='confirm'>חזור</button>");
+	$(".confirm").on("click", {data: data}, function() {
+		$("#light").empty();
+		displayInfo(data);
+	});
 }
 
 function clearLIghtBox() {
