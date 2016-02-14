@@ -194,7 +194,7 @@ function createPickupPage() {
 	main.fadeIn(200).append(fade);
 	setHeader("איסוף עצמי");
 	setBreadCrumbs("איסוף עצמי", "כללי");
-	$.get("ajax/newPIckup.html", function(data) {
+	$.get("ajax/newPickup.html", function(data) {
 		fade.siblings().remove();
 		main.attr("class", "mainP");
 		main.append(data);
