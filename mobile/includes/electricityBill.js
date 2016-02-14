@@ -21,8 +21,6 @@ $(document).ready(function() {
         $('.responsiveMenu').toggleClass('expand');
     });
 	var amount = $(location).attr("href").split("?")[1].split("=")[1];
-//	var billNum = arguments.split("&")[0].split("=")[1];
-//	var amount = arguments.split("&")[1].split("=")[1];
 	fillForm(amount);
     $(".electricForm").submit(function(e) {
         e.preventDefault();
@@ -32,7 +30,6 @@ $(document).ready(function() {
 
 function fillForm(amount) {
 	var fields = document.getElementsByClassName("field");
-//	fields.first().val(Mazal.getFirstName());
 	fields[0].value = Mazal.getFirstName();
 	fields[1].value = Mazal.getLastName();
 	fields[2].value = Mazal.getId();
@@ -47,10 +44,10 @@ function displayInfo(amount) {
 	$("body").prepend("<div id='fade'></div>");
 	$("body").prepend(lightBox);
 	$("#fade").on("click", function() {
-		window.location.replace("index.html");
+		window.location.replace("home.html");
 	});
 	$(".confirm").on("click", function() {
-		window.location.replace("index.html");
+		window.location.replace("home.html");
 	});
 	$("#fade").show();
 	lightBox.show();

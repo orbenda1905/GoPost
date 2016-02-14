@@ -464,7 +464,6 @@ input[type=search]:focus {
 .packageNum > p {
     text-align: center;
 	height: 100%;
-/*    padding-top: 2%;*/
     color: #c81925;
     font-size: 1.5em;
     font-weight: bold;
@@ -475,9 +474,6 @@ input[type=search]:focus {
 	border-bottom: 2px solid #ffffff;
 }
 .packageDel > form > label {
-/*    fl oat: right;*/
-/*    margin-right: 3%;*/
-/*    margin-top: 6%;*/
     color: #c81925;
     font-size: 1.5em;
     font-weight: bold;
@@ -643,11 +639,7 @@ input[type='text'][name='droneNumber']:focus {
     width: 100%;
     height: 100%;
 	background: rgba(0, 0, 0, 0.7);
-/*    background: #000000;*/
     z-index: 1001;
-/*    -moz-opacity: 0.7;*/
-/*    opacity: 0.70;*/
-/*    filter: alpha(opacity=70);*/
 }
 #light {
     height: 22%;
@@ -664,7 +656,6 @@ input[type='text'][name='droneNumber']:focus {
 
 
 .waitingSign {
-/*	display: none;*/
 	position: fixed;
 	z-index: 1000;
 	height: 100%;
@@ -695,10 +686,8 @@ input[type='text'][name='droneNumber']:focus {
     font-weight: bold;
 }
 .lightForm{
-/*	display: block;*/
     width: 100%;
     height: 75%;
-/*    position: relative;*/
 }
 .lightForm > section {
 	height: 65%;
@@ -719,8 +708,6 @@ input[type='text'][name='droneNumber']:focus {
 }
 .status {
     color: #c81925;
-/*    font-weight: bold;*/
-/*    position: relative;*/
 }
 .alertLine {
     width: 90%;

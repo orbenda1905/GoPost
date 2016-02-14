@@ -6,7 +6,6 @@ $(document).ready(function() {
 	showCurrentDate();
 	setSideNavLinks();
 	loadDashboard();
-
 })
 
 function loadDashboard() {

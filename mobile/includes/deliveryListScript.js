@@ -1,19 +1,15 @@
 var Client = function (pName, pId) {//class represents client
 	var name = pName;
 	var id = pId;
-
 	this.getName = function () {
 		return name;
 	};
-
 	this.getId = function () {
 		return id;
 	};
 };
 
 var Shani = new Client("שני", 123456789);
-
-
 var boxes = new Array();
 
 /*-----floating menu script-----*/
