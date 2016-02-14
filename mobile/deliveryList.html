@@ -7,37 +7,8 @@
 		<script src="includes/jquery.min.js"></script>
 		<script src="includes/deliveryListScript.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--
-		<script>
-			$(document).ready(function() {
-				deliveryList();
-			});
-        </script>
--->
 	</head>
 	<body>
-<!--
-		<div id="light">
-			<h2>פרטי החבילה</h2>
-			<p>
-				דואר רשום מספר - RR23342331467<br>
-				השולח - אופטיקנה ת״א<br>
-				מען - מקס שיין, רחובות<br>
-			</p>
-			<br>
-			<h2>פרטי יחידת הדואר לאיסוף</h2>
-			<p>
-				רושטילד 50, רחובות<br>
-				שעות פתיחה:<br>
-				ימים א׳, ב׳, ה׳ - 08:00 - 19:00<br>
-				ימים ג׳, ד׳, ו׳ - 08:00- 13:00
-			</p>
-			<br>
-			<button class = "scan">אשר</button>
-			<button class = "camera"></button>
-		</div>
--->
-<!--		<div id="fade"></div>-->
 		<div id="wrapper">
 			<header>
 				<a id="logo" href="index.html"></a>
@@ -66,10 +37,6 @@
 				<form id="deliveryAdding" action="" method="post">
 					<label>
 						<input class="packageId" required name="packageId" type="text" placeholder="מספר משלוח למעקב" pattern="(?=.*\d)(?=.*[A-Z]).{13,}" title="Must contain at least two uppercase letter, 9 digits and in the end two uppercase letter,exactly 13 characters">
-
-<!--
-Add here the page transfer to getCode.html to scan the barcode.
--->
 						<input class="scan" type="submit" value="סרוק">
 					</label>
 					<input class="addButton" type="submit" value=" +  הוסף">

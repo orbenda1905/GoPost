@@ -634,7 +634,7 @@ input[type='text'][name='droneNumber']:focus {
     outline: none;
 }
 /*--------------lighbox classes----------------*/
-#fade{
+#fade {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -653,20 +653,14 @@ input[type='text'][name='droneNumber']:focus {
     direction: rtl;
     border-radius: 3px;
 }
-
-
 .waitingSign {
 	position: fixed;
 	z-index: 1000;
 	height: 100%;
 	width: 100%;
 	top: 0px;
-	background:
-                url('http://i.stack.imgur.com/FhHRx.gif')
-                50% 50%
-                no-repeat;
+	background: url('http://i.stack.imgur.com/FhHRx.gif') 50% 50% no-repeat;
 }
-
 .camera {
     background-image: url(../images/camera.png);
     width: 48px;
