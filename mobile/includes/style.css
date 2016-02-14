@@ -660,27 +660,12 @@ input[type='text'][name='ccv'] {
 		width: 25%;
         float: right;
 	}
-    .delivery {
-        margin-left: 70%;
-        width: 40%;
-        float: left;
+    li {
+        width: 30%;
     }
-    .information {
-       width: 40%;
-    }
-    .payment {
-        width: 40%;
-        margin-left: 70%;
-        float: left;
-    }
-    .lineOrder {
-        width: 40%;
-    }
-    .exchange {
-        width: 40%;
-        margin-top: -61.5%;
-        float: left;
-        margin-left: 18%;
+    .welcome {
+        width: 80%;
+        float: right;
     }
     .responsiveMenu {
         width: 700%;
@@ -724,23 +709,22 @@ input[type='text'][name='ccv'] {
     .billKind {
         width: 40%;
     }
-
-
+    .packageId {
+       width: 40%;
+        margin-right: 25%;
+    }
+    .addButton {
+        margin-right: 25%;
+    }
+    .deliveryBox {
+	    width: 50%;
+        margin-left: 20%;
+    }
+    #deliveryAdding {
+        margin-bottom: 0%;
+    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*================Mobile==============*/
 @media (min-width: 475px) and (max-width: 590px) {
