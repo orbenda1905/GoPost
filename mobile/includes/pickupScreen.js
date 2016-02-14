@@ -39,7 +39,7 @@ function displayMessage() {
 	lightBox.append("<br>");
 	$("body").prepend(lightBox);
 	$("#fade").on("click", function() {
-		window.location.replace("index.html");
+		window.location.replace("home.html");
 	});
 	$("#fade").show();
 	lightBox.show();

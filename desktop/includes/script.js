@@ -6,7 +6,6 @@ $(document).ready(function() {
 	showCurrentDate();
 	setSideNavLinks();
 	loadDashboard();
-
 })
 
 function loadDashboard() {
@@ -15,7 +14,7 @@ function loadDashboard() {
 	$(".breadcrumb").empty();
 	$.get("ajax/newDashboard", function(data) {
 		$("#wrapper").append(data);
-		$.getJSON("data/addresses.json", function(data) {
+		$.getJSON("data/data.json", function(data) {
 			fillDashboard(data);
 			defineMotions();//define the click motions on each brick on the main menu
 			setBricksLinks();
@@ -116,7 +115,7 @@ function createDronePage() {
 	main.fadeIn(200).append(fade);
 	setHeaderDrone("רחפן");
 	setBreadCrumbs("רחפן", "כללי");
-	$.getJSON("data/addresses.json", function(data) {
+	$.getJSON("data/data.json", function(data) {
 		fillDronePage(data);
 	});
 }
