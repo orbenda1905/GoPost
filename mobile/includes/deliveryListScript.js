@@ -51,25 +51,8 @@ $(document).ready(function() {
 				lightBox.show();
 				return;
 			}
-			if (json.option != null) {
-				var option = json.option;
-				var fade = $("<div id='lightFade'></div>");
-				var lightBox = $("<div id='light'></div>");
-				lightBox.append("<h2>" + "שגיאה!!" + "</h2>");
-				lightBox.append("<p>לחבילה המבוקשת כבר עודכן אמצעי איסוף</p><p>אמצעי האיסוף הוא - " + option + "</p>");
-				fade.on("click", function() {
-					$("#lightFade").remove();
-					$("#light").remove();
-				});
-				$("body").append(fade);
-				$("body").append(lightBox);
-				fade.show();
-				lightBox.show();
-				return;
-			}
 			var boxNumOnList = boxes[json.id]
 			if (boxNumOnList) {
-//				alert("box exist");
 				var fade = $("<div id='fade'></div>");
 				var light = $("<div id='light'></div>");
 				light.append("<h2>" + "שגיאה!" + "</h2>");
@@ -104,12 +87,30 @@ function addBox(data) {
     box.append("<div class='tiltLine'></div>");
 	var statusClass = $("<div class='status'></div>");
 	if (data.status === "מוכן") {
-		statusClass.append("<a class='readySts' href=pickupOptions.html?boxId=" + data.id + "></a>");
+		var option = data.option;
+		var readySts = $("<a class='readySts' href=pickupOptions.html?boxId=" + data.id + "></a>");
+		statusClass.append(readySts);
+		if (option) {
+			readySts.on("click", function(e) {
+				e.preventDefault();
+				var fade = $("<div id='lightFade'></div>");
+				var lightBox = $("<div id='light'></div>");
+				lightBox.append("<h2>" + "שגיאה!!" + "</h2>");
+				lightBox.append("<p>לחבילה המבוקשת כבר עודכן אמצעי איסוף</p><p>אמצעי האיסוף הוא - " + option + "</p>");
+				fade.on("click", function() {
+					$("#lightFade").remove();
+					$("#light").remove();
+				});
+				$("body").append(fade);
+				$("body").append(lightBox);
+				fade.show();
+				lightBox.show();
+			});
+		}
 	}else {
 		var infoBtn = $("<a class='infoSts' href='#'></a>");
 		infoBtn.on("click", function() {
 			displayInfo(data);
-//			alert(data.id);
 		});
 		statusClass.append(infoBtn);
 	}
@@ -154,27 +155,3 @@ function clearLIghtBox() {
 		$(this).remove();
 	});
 }
-
-//if (mysqli_num_rows($result) === 0) {
-//		$answer =  array("exist" => "no");
-//	} else {
-//		$row = mysqli_fetch_assoc($result);
-//		if ($row['Delivery_option'] != null) {
-//			$answer = array("exist" => "already");
-//			$option = $raw['Delivery_option'];
-//			$answer = array("option" => $option);
-//		}
-//		else{
-//			$from = $row['From'];
-//			$status = $row['Status'];
-//			$office = $row['Office_branch'];
-////			$status = $row['Status'];
-//			$answer = array("exist" => "yes",
-//							"id" => $boxId,
-//							"from" => $from,
-//							"office" => $office,
-//							"status" => $status);
-//			mysqli_free_result($result);
-//		}
-//
-//	}
