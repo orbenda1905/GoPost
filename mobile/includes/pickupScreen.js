@@ -1,16 +1,10 @@
-///*-----floating menu script-----*/
-//$(function($){
-//        $('#menu').click(function(){
-//        $('.responsiveMenu').toggleClass('expand');
-//    });
-//});
+
+
 
 $(document).ready(function() {
-
-	$('#menu').click(function(){
+	$('#menu').click(function(){///*-----floating menu script-----*/
         $('.responsiveMenu').toggleClass('expand');
     });
-
 	var boxId = $(location).attr("href").split("?")[1].split("=")[1];//getting the boxId from the url
 	$(".selfPickup").attr("href", "pickup.html?boxId=" + boxId);
 	var id = localStorage.getItem(boxId);
@@ -30,10 +24,10 @@ $(document).ready(function() {
 		$.get("updateBox.php", {boxId: boxId, delivery: "selfPicking"}, function() {
 			$('.waitingSign').fadeOut(200, function() {
 				$('.waitingSign').remove();
-				$("#fade").remove();
+				displayMessage();
 			});
 		});
-		displayMessage();
+
 	});
 })
 
@@ -43,11 +37,8 @@ function displayMessage() {
 	var paragraph = $("<p></p>");
 	lightBox.append(paragraph);
 	lightBox.append("<br>");
-	$("body").prepend("<div id='lightFade'></div>");
 	$("body").prepend(lightBox);
-	$("#lightFade").on("click", function() {
-//		$("#light").remove();
-//		$("#fade").remove();
+	$("#fade").on("click", function() {
 		window.location.replace("index.html");
 	});
 	$("#fade").show();

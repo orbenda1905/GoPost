@@ -37,7 +37,6 @@ $(document).ready(function() {
 			});
 			var json = $.parseJSON(data);
 			if (json.exist === "no") {
-//				notExist(boxId);
 				var fade = $("<div id='lightFade'></div>");
 				var lightBox = $("<div id='light'></div>");
 				lightBox.append("<h2>" + "שגיאה!!" + "</h2>");
@@ -54,7 +53,6 @@ $(document).ready(function() {
 			}
 			var boxNumOnList = boxes[json.id]
 			if (boxNumOnList) {
-//				alert("box exist");
 				var fade = $("<div id='fade'></div>");
 				var light = $("<div id='light'></div>");
 				light.append("<h2>" + "שגיאה!" + "</h2>");
@@ -89,12 +87,30 @@ function addBox(data) {
     box.append("<div class='tiltLine'></div>");
 	var statusClass = $("<div class='status'></div>");
 	if (data.status === "מוכן") {
-		statusClass.append("<a class='readySts' href=pickupOptions.html?boxId=" + data.id + "></a>");
+		var option = data.option;
+		var readySts = $("<a class='readySts' href=pickupOptions.html?boxId=" + data.id + "></a>");
+		statusClass.append(readySts);
+		if (option) {
+			readySts.on("click", function(e) {
+				e.preventDefault();
+				var fade = $("<div id='lightFade'></div>");
+				var lightBox = $("<div id='light'></div>");
+				lightBox.append("<h2>" + "שגיאה!!" + "</h2>");
+				lightBox.append("<p>לחבילה המבוקשת כבר עודכן אמצעי איסוף</p><p>אמצעי האיסוף הוא - " + option + "</p>");
+				fade.on("click", function() {
+					$("#lightFade").remove();
+					$("#light").remove();
+				});
+				$("body").append(fade);
+				$("body").append(lightBox);
+				fade.show();
+				lightBox.show();
+			});
+		}
 	}else {
 		var infoBtn = $("<a class='infoSts' href='#'></a>");
 		infoBtn.on("click", function() {
 			displayInfo(data);
-//			alert(data.id);
 		});
 		statusClass.append(infoBtn);
 	}
